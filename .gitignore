@@ -79,6 +79,9 @@ web_modules/
 .env.production.local
 .env.local
 
+# env file I created
+.env.example
+
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 .parcel-cache
