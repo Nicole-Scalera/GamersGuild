@@ -1,0 +1,11 @@
+{
+  "name": "nscalera-lab4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/app.js",
+  "scripts": {
+    "dev": "nodemon server/app.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

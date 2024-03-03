@@ -1,0 +1,3 @@
+- package.json is a desc for the config of an application.
+- lists the dependencies for our program.
+- central point of the app.
