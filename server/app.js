@@ -8,6 +8,9 @@ const PORT = process.env.PORT || 1337;
 const express = require('express'); // Express is a dependency that needs
 const app = express();              // to be installed through the terminal.
 
+app.use(express.static('client/public')); // Allows us to access public files.
+// Middleware
+
 // the '/' goes to the homepage of the app
 app.get(['/', '/index.html'], function (req, res) {
     // This is what you get back: a file named 'index.html' that displays the homepage
@@ -15,8 +18,24 @@ app.get(['/', '/index.html'], function (req, res) {
     // res is the "response," what the client actually gets
 })
 
-app.get('/page1.html', function (req, res) {
-    res.sendFile('page1.html', { root: './' })
+// For page 1
+// app.get('/page1.html', function (req, res) {
+//     res.sendFile('page1.html', { root: './' })
+// })
+
+app.get('/profile', function(req, res) {
+    res.sendFile('profile.html', { root: './client/views' })
+})
+
+app.get('/api/posts', function (req, res) {
+    res.json({
+        data:[
+            {
+                id:1,
+                title:"rah"
+            }
+        ]
+    });
 })
 
 // app.listen is basically the notification bell.
