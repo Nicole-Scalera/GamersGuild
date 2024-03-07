@@ -15,53 +15,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/boxes.css"></link> <!-- Link in boxes -->
+    <link rel="stylesheet" href="/css/fonts.css"></link> <!-- Link in fonts -->
+    <link rel="stylesheet" href="/css/colors.css"></link> <!-- Link in colors -->
+    <link rel="stylesheet" href="/css/globals.css"></link> <!-- Link in globals -->
     <title>Document</title>
     
 </head>
     <body>
-        <!-- Welcome User Back -->
-        <div id="welcome_back_message">
-            <button id="button">e</button>
+                            <!-- Center Aligned         Background Color is Cadet Grey-->
+        <div class="box1" style="margin: auto; background-color: var(--cadetgrey);">
+            <!-- Welcome User Back -->
+            <div id="welcome_back_message">
+                <button id="button">e</button>
 
-            <!-- Hi! Please enter your login credentials. -->
-            <!-- After the user enters login credentials, this will
-                get a message welcoming user back. -->
+                <!-- Hi! Please enter your login credentials. -->
+                <!-- After the user enters login credentials, this will
+                    get a message welcoming user back. -->
+            </div>
+            <form id="website_login_form"> <!-- This ID is an attribute. -->
+
+                <!-- Prompt user for Username -->
+                <div style="padding-bottom: 10px;">
+                    <label>     <!-- Font Name                              Font Size        Font Weight         Text Color -->
+                        <span style="font-family: 'stevie-sans', monospace; font-size: 16pt; font-weight: 400pt; color: #000000;">
+                        Username:
+                        </span>
+                    </label>
+                    <!-- "type" would be text because it's a string. -->
+                    <input type="text" name="username" id="login_username_input">
+                </div>
+
+
+                <!-- Prompt user for Email -->
+                <div style="padding-bottom: 10px;">
+                    <label>     <!-- Font Name                              Font Size        Font Weight         Text Color -->
+                        <span style="font-family: 'stevie-sans', monospace; font-size: 16pt; font-weight: 400pt; color: #000000;">
+                        Email:
+                        </span>
+                    </label>
+                    <!-- We don't need to close this. Also note that Name is
+                        different from an ID. ID is globally unique identifier. -->
+                    <input type="email" name="email" id="login_email_input">
+                </div>
+
+                <!-- Prompt user for Password -->
+                <div style="padding-bottom: 10px;">
+                    <label>     <!-- Font Name                              Font Size        Font Weight         Text Color -->
+                        <span style="font-family: 'stevie-sans', monospace; font-size: 16pt; font-weight: 400pt; color: #000000;">
+                        Password:
+                        </span>
+                    </label>
+                    <input type="password" name="password" id="login_password_input">
+                </div>
+
+                <!-- Login Submit Button -->
+                <div>
+                    <button type="submit">Login</button>
+                </div>
+            </form>
         </div>
-        <form id="website_login_form"> <!-- This ID is an attribute. -->
-
-            <!-- Prompt user for Username -->
-            <div>
-                <label>
-                    Username:
-                </label>
-                <!-- "type" would be text because it's a string. -->
-                <input type="text" name="username" id="login_username_input">
-            </div>
-
-
-            <!-- Prompt user for Email -->
-            <div>
-                <label>
-                    Email:
-                </label>
-                <!-- We don't need to close this. Also note that Name is
-                    different from an ID. ID is globally unique identifier. -->
-                <input type="email" name="email" id="login_email_input">
-            </div>
-
-            <!-- Prompt user for Password -->
-            <div>
-                <label>
-                    Password:
-                </label>
-                <input type="password" name="password" id="login_password_input">
-            </div>
-
-            <!-- Login Submit Button -->
-            <div>
-                <button type="submit">Login</button>
-            </div>
-        </form>
 
         <!-- Access the JS file "index.js" -->
         <script src="/js/index.js"></script>

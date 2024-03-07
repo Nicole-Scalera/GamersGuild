@@ -24,6 +24,7 @@ const init = () => {
     // Make sure the button isn't
     // displayed when the page first loads.
     button.style.display = "none"
+    login_form.style.display = "block"
 }
 
 const create_wb_message = () => {
@@ -48,6 +49,7 @@ const create_wb_message = () => {
     /* NOTE:
      * - Once user submits the login information,
      * display the "Go to Feed" button. */
+    login_form.style.display = "none"
     button.style.display = "block"
     button.textContent = `Go to Feed`
 
@@ -96,6 +98,7 @@ login_form.onsubmit = (event) => {
     // Call the function to create
     // the "Welcome Back" message.
     create_wb_message()
+    login_form.style.display = "none"
     button.style.display = "block" // Make the button visible
 
 }
