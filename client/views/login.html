@@ -1,0 +1,70 @@
+<!-- NOTES -->
+<!-- 
+    - <span> tag is for formatting separate pieices in paragraph text.
+        - There can be different levels of hierarchy that are treated
+        differently.
+        - Should only really be used inside of text.
+    - Order of <div>'s doesn't really matter because JavaScript uses
+    IDs to access them.
+ -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+    <body>
+        <!-- Welcome User Back -->
+        <div id="welcome_back_message">
+            <button id="button">e</button>
+
+            <!-- Hi! Please enter your login credentials. -->
+            <!-- After the user enters login credentials, this will
+                get a message welcoming user back. -->
+        </div>
+        <form id="website_login_form"> <!-- This ID is an attribute. -->
+
+            <!-- Prompt user for Username -->
+            <div>
+                <label>
+                    Username:
+                </label>
+                <!-- "type" would be text because it's a string. -->
+                <input type="text" name="username" id="login_username_input">
+            </div>
+
+
+            <!-- Prompt user for Email -->
+            <div>
+                <label>
+                    Email:
+                </label>
+                <!-- We don't need to close this. Also note that Name is
+                    different from an ID. ID is globally unique identifier. -->
+                <input type="email" name="email" id="login_email_input">
+            </div>
+
+            <!-- Prompt user for Password -->
+            <div>
+                <label>
+                    Password:
+                </label>
+                <input type="password" name="password" id="login_password_input">
+            </div>
+
+            <!-- Login Submit Button -->
+            <div>
+                <button type="submit">Login</button>
+            </div>
+        </form>
+
+        <!-- Access the JS file "index.js" -->
+        <script src="/js/index.js"></script>
+
+    </body>
+</html>

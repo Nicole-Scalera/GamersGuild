@@ -23,8 +23,19 @@ app.get(['/', '/index.html'], function (req, res) {
 //     res.sendFile('page1.html', { root: './' })
 // })
 
+// Route Handler for Profile
 app.get('/profile', function(req, res) {
     res.sendFile('profile.html', { root: './client/views' })
+})
+
+// Route Handler for Login Page
+app.get('/login', function (req, res) {
+    res.sendFile('login.html', { root: './client/views' })
+})
+
+// Route Handler for Feed
+app.get('/feed/:username', function (req, res) {            // computer understands the
+    res.sendFile('feed.html', { root: './client/views' })   // username parameter.
 })
 
 app.get('/api/posts', function (req, res) {
