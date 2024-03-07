@@ -4,3 +4,17 @@
     padding: 50px;
     margin: 20px;
 }
+
+.headerbox {
+    width: 100%;
+    height: 100px;
+    background-color: var(--cadetgrey);
+    margin: auto;
+    margin-bottom: 100px;
+}
+
+.headerlogo {
+    /* border: 3px solid green; */
+    margin: auto;
+    width: 500px;
+}

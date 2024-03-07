@@ -1,0 +1,8 @@
+/* Settings for logo in header. */
+.logoheader {
+    height: 50px;
+    margin: auto;
+    display: block;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}

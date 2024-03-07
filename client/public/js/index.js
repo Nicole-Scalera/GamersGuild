@@ -16,6 +16,7 @@ const email_input = document.getElementById("login_email_input")        // Email
 const password_input = document.getElementById("login_password_input")  // Password Prompt Box
 const welcome_back = document.getElementById("welcome_back_message")    // Welcome back message
 const gt_feed_button = document.getElementById("button")
+const header_logo = document.getElementById("gg_header_logo")
 
 // -----------------------------------
 
@@ -25,13 +26,26 @@ const init = () => {
     // displayed when the page first loads.
     button.style.display = "none"
     login_form.style.display = "block"
+
+}
+
+// If the header logo is clicked, the user
+// will be taken to the homepage. 
+const header_logo_homepage = () => {
+
+    const header_logo_link = document.createElement("a")
+
+    // When the button is clicked
+    header_logo.onclick = (event) => {
+        // Link to user's homepage
+        location.href = `/index.html`
+    }
+    
+    header_logo.appendChild(header_logo_link) // node we're attaching is header_logo_link
+
 }
 
 const create_wb_message = () => {
-
-    const username_value = username_input.value
-    const wb_header = document.createElement("h3") // Create a new element with the h3 header format
-    const wb_link = document.createElement("a")
 
     /* NOTE:
     * - We don't use a standard apostrophe ('), we use a back tick (`)
@@ -45,6 +59,10 @@ const create_wb_message = () => {
     *      wb_link.setAttribute("href", `/feed/${username_value}`)
     *                             ^ Attaching the href to be used as a link
     */
+
+    const username_value = username_input.value
+    const wb_header = document.createElement("h3") // Create a new element with the h3 header format
+    const wb_link = document.createElement("a")
 
     /* NOTE:
      * - Once user submits the login information,
@@ -60,12 +78,13 @@ const create_wb_message = () => {
         location.href = `/feed/${username_value}`
 
     }
-
+    
     // These need to be in order
     welcome_back.appendChild(wb_header) // node we're attaching is wb_header
     welcome_back.appendChild(wb_link) // node we're attaching is wb_link
 
 }
+
 
 /* NOTE:
  * -"login_form.onsubmit" is the same as addEventListener,
@@ -103,5 +122,6 @@ login_form.onsubmit = (event) => {
 
 }
 
-// Call the init function
+// Call these functions on startup
 init()
+header_logo_homepage()
