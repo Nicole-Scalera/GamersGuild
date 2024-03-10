@@ -1,0 +1,22 @@
+/* ----- NAVIGATIONAL BUTTON 1 ----- */
+/* This is the navigational button, for instances
+ * like "Go to Feed." It does not appear on the
+ * hot bar header that is on every page. */
+.button_nav1 {
+    background-color: var(--silversand);
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+/* ----- NAVIGATIONAL BUTTON 1 - HOVER -----*/
+.button_nav1:hover {
+    background-color: #04AA6D;
+    /* Green */
+    color: white;
+}

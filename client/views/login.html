@@ -15,30 +15,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/boxes.css"></link> <!-- Link in boxes -->
-    <link rel="stylesheet" href="/css/fonts.css"></link> <!-- Link in fonts -->
-    <link rel="stylesheet" href="/css/colors.css"></link> <!-- Link in colors -->
-    <link rel="stylesheet" href="/css/images.css"></link> <!-- Link in images -->
-    <link rel="stylesheet" href="/css/globals.css"></link> <!-- Link in globals -->
-    <title>Document</title>
+
+    <!-- Links should be in Alphabetical Order -->
+    <link rel="stylesheet" href="/css/boxes.css"></link>    <!-- Boxes -->
+    <link rel="stylesheet" href="/css/buttons.css"></link>  <!-- Buttons -->
+    <link rel="stylesheet" href="/css/colors.css"></link>   <!-- Colors -->
+    <link rel="stylesheet" href="/css/fonts.css"></link>    <!-- Fonts -->
+    <link rel="stylesheet" href="/css/globals.css"></link>  <!-- Globals -->
+    <link rel="stylesheet" href="/css/images.css"></link>   <!-- Images -->
+    
+    <title>Login</title>
     
 </head>
     <body>
 
-        <!-- Header that is the same on every page -->
+        <!-- ======== HEADER (START) ======== -->
         <div class="headerbox">
             <input type="image" src="/img/logo/Logo_White_BlackOutline.svg" alt="Gamers Guild Logo" class="logoheader" id="gg_header_logo"></input>
         </div>
-                            <!-- Center Aligned            Background Color is Casper -->
-        <div class="box1" style="margin: auto; background-color: var(--cadetgreylighter);">
-            <!-- Welcome User Back -->
-            <div id="welcome_back_message">
-                <button id="button">e</button>
+        <!-- ======== HEADER (END) ======== -->
 
-                <!-- Hi! Please enter your login credentials. -->
-                <!-- After the user enters login credentials, this will
-                    get a message welcoming user back. -->
+
+        <!-- ======== CREDENTIALS PROMPT (START) ======== -->   
+            <!-- Prompt user for Credentials -->
+            <div id="credentials_prompt">
+                Greetings! Please enter your login information below.
             </div>
+        <!-- ======== CREDENTIALS PROMPT (END) ======== -->
+        
+
+        <!-- ======== WELCOME BACK MESSAGE (START) ======== -->
+            <!-- Once user has logged in,
+                display Welcome Back message. -->
+            <div id="welcome_back_message">
+
+                <!-- "Go to Feed" button -->
+                <button id="button" class="button_nav1" style="margin: auto;"></button>
+                                      <!-- ^ See buttons.css
+                                           for button styles. -->
+            </div>
+        <!-- ======== WELCOME BACK MESSAGE (END) ======== -->
+
+
+        <!-- ======== LOGIN FORM (START) ======== -->
+        <div class="box1" style="margin: auto; background-color: var(--cadetgreylighter);"> <!-- create the background box -->
+            
             <form id="website_login_form"> <!-- This ID is an attribute. -->
 
                 <!-- Prompt user for Username -->
@@ -79,8 +100,10 @@
                 <div>
                     <button type="submit">Login</button>
                 </div>
-            </form>
-        </div>
+            </form> <!-- close the form -->
+        </div> <!-- close the background box -->
+
+        <!-- ======== LOGIN FORM (END) ======== -->
 
         <!-- Access the JS file "index.js" -->
         <script src="/js/index.js"></script>
