@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="/css/fonts.css"></link>    <!-- Fonts -->
     <link rel="stylesheet" href="/css/globals.css"></link>  <!-- Globals -->
     <link rel="stylesheet" href="/css/images.css"></link>   <!-- Images -->
+    <link rel="stylesheet" href="/css/text.css"></link>     <!-- Text -->
 
     <title>Login</title>
     
@@ -49,9 +50,7 @@
 
         <!-- ======== CREDENTIALS PROMPT (START) ======== -->   
             <!-- Prompt user for Credentials -->
-            <div id="credentials_prompt">
-                Greetings! Please enter your login information below.
-            </div>
+            <div id="credentials_prompt"></div>
         <!-- ======== CREDENTIALS PROMPT (END) ======== -->
         
 
@@ -60,8 +59,10 @@
                 display Welcome Back message. -->
             <div id="welcome_back_message">
 
+                <div id="welcome_back_text" class="txtheader1"></div>
+
                 <!-- "Go to Feed" button -->
-                <button id="button" class="button_nav1" style="margin: auto;"></button>
+                <button id="gtf_button" class="button_nav1" style="margin: auto;"></button>
                                       <!-- ^ See buttons.css
                                            for button styles. -->
             </div>

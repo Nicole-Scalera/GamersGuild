@@ -14,25 +14,32 @@ const login_form = document.getElementById("website_login_form")        // Login
 const username_input = document.getElementById("login_username_input")  // Username Prompt Box
 const email_input = document.getElementById("login_email_input")        // Email Prompt Box
 const password_input = document.getElementById("login_password_input")  // Password Prompt Box
-const welcome_back = document.getElementById("welcome_back_message")    // Welcome back message
-const gt_feed_button = document.getElementById("button")
-const header_logo = document.getElementById("gg_header_logo")
+const welcome_back = document.getElementById("welcome_back_text")       // Welcome back message
+const gt_feed_button = document.getElementById("gtf_button")            // "Go to Feed" Button
+const header_logo = document.getElementById("gg_header_logo")           // Logo in Header
+const prompt = document.getElementById("credentials_prompt")            // Prompt User for Credentials
 
 // -----------------------------------
 
-// Function for button
+
+// -------- ON STARTUP (START) --------
 const init = () => {
-    // Make sure the button isn't
-    // displayed when the page first loads.
-    button.style.display = "none"
-    login_form.style.display = "block"
+    gt_feed_button.style.display = "none" // "Go to Feed" button isn't initially visible.
+    prompt.style.display = "block" // Prompt user for credentials on startup.
+    login_form.style.display = "block" // Login form is visible on startup.
+
+    // Prompt User for Credentials
 
 }
+// -------- ON STARTUP (END) --------
 
-// If the header logo is clicked, the user
-// will be taken to the homepage. 
+
+// -------- HEADER LOGO (START) --------
 const header_logo_homepage = () => {
 
+    // If the header logo is clicked, the user
+    // will be taken to the homepage.
+    
     const header_logo_link = document.createElement("a")
 
     // When the button is clicked
@@ -44,13 +51,16 @@ const header_logo_homepage = () => {
     header_logo.appendChild(header_logo_link) // node we're attaching is header_logo_link
 
 }
+// -------- HEADER LOGO (END) --------
 
+
+// -------- WELCOME BACK MESSAGE (START) --------
 const create_wb_message = () => {
 
+
     /* NOTE:
-    * - We don't use a standard apostrophe ('), we use a back tick (`)
-    * because it is a string template literal, which format strings
-    * differently.
+    * - We don't use a standard apostrophe ('), we use a back tick (`) because
+    * it is a string template literal, which format strings differently.
     * 
     * - Here's how to make text that will have a hyperlink:
     * 
@@ -60,30 +70,31 @@ const create_wb_message = () => {
     *                             ^ Attaching the href to be used as a link
     */
 
-    const username_value = username_input.value
-    const wb_header = document.createElement("h3") // Create a new element with the h3 header format
-    const wb_link = document.createElement("a")
+    const username_value = username_input.value // Get Username
+    const wb_header = document.createElement("h3") // Create a new element with h3 format
 
     /* NOTE:
      * - Once user submits the login information,
      * display the "Go to Feed" button. */
-    login_form.style.display = "none"
-    button.style.display = "block"
-    button.textContent = `Go to Feed`
+    login_form.style.display = "none" // Disable Login form
+    wb_header.textContent = `Welcome Back, ${username_value}!` // Enable Welcome Back message
+
+    // -------- GO TO FEED BUTTON (START) --------
+    gt_feed_button.style.display = "block"
+    gt_feed_button.textContent = `Go to Feed`
 
     // When the button is clicked
-    button.onclick = (event) => {
-    
+    gt_feed_button.onclick = (event) => {
         // Link to user's feed page
         location.href = `/feed/${username_value}`
-
     }
+    // -------- GO TO FEED BUTTON (END) --------
     
-    // These need to be in order
+    // Attach "wb_header" to "welcome_back"
     welcome_back.appendChild(wb_header) // node we're attaching is wb_header
-    welcome_back.appendChild(wb_link) // node we're attaching is wb_link
 
 }
+// -------- WELCOME BACK MESSAGE (END) --------
 
 
 /* NOTE:
@@ -96,6 +107,8 @@ const create_wb_message = () => {
  * following one will override the previous.
  * - "preventDefault()" is a function built into "event" */
 
+
+// -------- LOGIN FORM - SUBMIT (START) --------
 login_form.onsubmit = (event) => {
 
     // Prevent the default behavior
@@ -117,11 +130,15 @@ login_form.onsubmit = (event) => {
     // Call the function to create
     // the "Welcome Back" message.
     create_wb_message()
-    login_form.style.display = "none"
-    button.style.display = "block" // Make the button visible
+    prompt.style.display = "block"      // Disable the credentials prompt
+    gt_feed_button.style.display = "block" // Make the "Go to Feed" button visible
+    login_form.style.display = "none"  // Disable the Login form
 
 }
+// -------- LOGIN FORM - SUBMIT (END) --------
 
-// Call these functions on startup
+
+// -------- STARTUP FUNCTIONS (START) --------
 init()
 header_logo_homepage()
+// -------- STARTUP FUNCTIONS (END) --------
