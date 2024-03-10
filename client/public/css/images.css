@@ -1,5 +1,6 @@
+/* ----- HEADER LOGO ----- */
 /* Settings for logo in header. */
-.logoheader {
+.headerlogo {
     height: 50px;
     margin: auto;
     display: block;

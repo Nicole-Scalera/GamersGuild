@@ -2,9 +2,17 @@
  * to reference later on. */
 
 :root {
+
+    /* Moonstone Blue */
+    --moonstoneblue: #73a9c2;
+    --moonstonebluelighter1: #aacddd;
+
+    /* Cadet Grey */
     --cadetgrey: #91a3b0;
     --cadetgreylighter: #aebbc4;
+    --cadetgreytint1: #87A5BA;
     --casper: #adbed1;
     --ghost: #c7c9d5;
     --silversand: #bfc1c2;
+    --slateblue: #526470;
 }
