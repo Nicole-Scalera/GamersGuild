@@ -3,9 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    
+    <!-- Links should be in Alphabetical Order -->
+    <link rel="stylesheet" href="/css/boxes.css"></link> <!-- Boxes -->
+    <link rel="stylesheet" href="/css/buttons.css"></link> <!-- Buttons -->
+    <link rel="stylesheet" href="/css/colors.css"></link> <!-- Colors -->
+    <link rel="stylesheet" href="/css/fonts.css"></link> <!-- Fonts -->
+    <link rel="stylesheet" href="/css/globals.css"></link> <!-- Globals -->
+    <link rel="stylesheet" href="/css/images.css"></link> <!-- Images -->
+    <link rel="stylesheet" href="/css/text.css"></link> <!-- Text -->
+    
+    <!-- Page Title -->
+    <title>Feed</title>
+
 </head>
     <body>
-        <p>Hello! This is the feed.</p>
+
+        <!-- ======== HEADER (START) ======== -->
+        <div class="headerbox">
+            <input type="image" src="/img/logo/Logo_White_BlackOutline.svg" alt="Gamers Guild Logo" class="headerlogo"
+                id="gg_header_logo"></input>
+        
+            <!-- ======== NAVIGATIONAL BAR (START) ======== -->
+            <div class="navbarbox" id="navigationalbar"></div>
+            <!-- ======== NAVIGATIONAL BAR (END) ======== -->
+        </div>
+        <!-- ======== HEADER (END) ======== -->
+
+
+        <div id="posts-container" class="post1"></div>
+
+
+
+
+        <!-- ======== JAVASCRIPT (START) ======== -->
+        <script src="/js/header_navbar.js"></script>    <!-- Access the JS file "header_navbar.js" -->
+        <script src="/js/content.js"></script>          <!-- Access the JS file "content.js" -->
+        <!-- ======== JAVASCRIPT (END) ======== -->
+
     </body>
 </html>

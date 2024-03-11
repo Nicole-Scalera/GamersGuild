@@ -27,3 +27,11 @@
     margin-bottom: 100px;
 
 }
+
+/* SOCIAL MEDIA POST 1 */
+.post1 {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}

@@ -6,20 +6,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Make sure these are href and not src -->
-    <link rel="stylesheet" href="/css/fonts.css"></link> <!-- Link in fonts -->
-    <link rel="stylesheet" href="/css/globals.css"></link> <!-- Then link in globals -->
-    <title>Document</title>
+
+    <!-- Links should be in Alphabetical Order -->
+    <link rel="stylesheet" href="/css/boxes.css"></link> <!-- Boxes -->
+    <link rel="stylesheet" href="/css/buttons.css"></link> <!-- Buttons -->
+    <link rel="stylesheet" href="/css/colors.css"></link> <!-- Colors -->
+    <link rel="stylesheet" href="/css/fonts.css"></link> <!-- Fonts -->
+    <link rel="stylesheet" href="/css/globals.css"></link> <!-- Globals -->
+    <link rel="stylesheet" href="/css/images.css"></link> <!-- Images -->
+    <link rel="stylesheet" href="/css/text.css"></link> <!-- Text -->
+
+    <!-- Page Title -->
+    <title>Profile</title>
+
 </head>
+    <body>
 
-<body>
-    <!-- put div(S) in here that adds all of the things dynamically -->
-    <!-- Sometimes people create divs with the ID of a container -->
-    <p><span style="font-size: 24pt; font-family: 'thrillers', monospace; color: #000000;">web design</span></p>
-    <h1><span style="font-size:34pt">PROFILE RAHHH!!!1!!1!</span></h1>
-    <p><span style="font-size: 30pt; font-family: 'cc-dynamic-duo-open-variable', monospace; color: #000000;">YEAHHH</span></p>
-    <img src="/img/eagle.png" alt="the eagle" width="250" height="250">
+        <!-- ======== HEADER (START) ======== -->
+        <div class="headerbox">
+            <input type="image" src="/img/logo/Logo_White_BlackOutline.svg" alt="Gamers Guild Logo" class="headerlogo" id="gg_header_logo"></input>
+        
+            <!-- ======== NAVIGATIONAL BAR (START) ======== -->
+            <div class="navbarbox" id="navigationalbar"></div>
+            <!-- ======== NAVIGATIONAL BAR (END) ======== -->
+        </div>
+        <!-- ======== HEADER (END) ======== -->
 
-</body>
 
+        <!-- put div(S) in here that adds all of the things dynamically -->
+        <!-- Sometimes people create divs with the ID of a container -->
+        <p><span style="font-size: 24pt; font-family: 'thrillers', monospace; color: #000000;">web design</span></p>
+        <h1><span style="font-size:34pt">PROFILE RAHHH!!!1!!1!</span></h1>
+        <p><span style="font-size: 30pt; font-family: 'cc-dynamic-duo-open-variable', monospace; color: #000000;">YEAHHH</span></p>
+        <img src="/img/eagle.png" alt="the eagle" width="250" height="250">
+
+
+        <!-- ======== JAVASCRIPT (START) ======== -->
+        <script src="/js/header_navbar.js"></script> <!-- Access the JS file "header_navbar.js" -->
+        <!-- ======== JAVASCRIPT (END) ======== -->
+
+
+    </body>
 </html>

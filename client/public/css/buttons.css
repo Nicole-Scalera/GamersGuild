@@ -3,20 +3,18 @@
  * like "Go to Feed." It does not appear on the
  * hot bar header that is on every page. */
 .button_nav1 {
-    background-color: var(--silversand);
-    /* Green */
+    background-color: var(--darkcyan);
     border: none;
+    border-radius: 1.10em 1.10em 1.10em 1.10em;
     color: white;
-    padding: 15px 32px;
+    padding: 10px 22px;
     text-align: center;
-    text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 /* ----- NAVIGATIONAL BUTTON 1 - HOVER -----*/
 .button_nav1:hover {
-    background-color: #04AA6D;
-    /* Green */
+    background-color: var(--darkcyanlighter);
     color: white;
 }

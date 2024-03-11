@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="/css/images.css"></link>   <!-- Images -->
     <link rel="stylesheet" href="/css/text.css"></link>     <!-- Text -->
 
+    <!-- Page Title -->
     <title>Login</title>
     
 </head>
@@ -35,15 +36,8 @@
             <input type="image" src="/img/logo/Logo_White_BlackOutline.svg" alt="Gamers Guild Logo" class="headerlogo" id="gg_header_logo"></input>
             
             <!-- ======== NAVIGATIONAL BAR (START) ======== -->
-            <div class="navbarbox">
-                <table style="width:100%">
-                    <tr>
-                        <td>Company</td>
-                        <th>Contact</th>
-                        <th>Country</th>
-                    </tr>
-                </table>
-            </div>
+            <div class="navbarbox" id="navigationalbar"></div>
+            <!-- ======== NAVIGATIONAL BAR (END) ======== -->
         </div>
         <!-- ======== HEADER (END) ======== -->
 
@@ -52,26 +46,25 @@
             <!-- Prompt user for Credentials -->
             <div id="credentials_prompt"></div>
         <!-- ======== CREDENTIALS PROMPT (END) ======== -->
-        
-
-        <!-- ======== WELCOME BACK MESSAGE (START) ======== -->
-            <!-- Once user has logged in,
-                display Welcome Back message. -->
-            <div id="welcome_back_message">
-
-                <div id="welcome_back_text" class="txtheader1"></div>
-
-                <!-- "Go to Feed" button -->
-                <button id="gtf_button" class="button_nav1" style="margin: auto;"></button>
-                                      <!-- ^ See buttons.css
-                                           for button styles. -->
-            </div>
-        <!-- ======== WELCOME BACK MESSAGE (END) ======== -->
 
 
         <!-- ======== LOGIN FORM (START) ======== -->
         <div class="box1" style="margin: auto; background-color: var(--moonstonebluelighter1);"> <!-- create the background box -->
             
+        <!-- ======== WELCOME BACK MESSAGE (START) ======== -->
+        <!-- Once user has logged in,
+            display Welcome Back message. -->
+        <div id="welcome_back_message" style="vertical-align: middle;">
+        
+            <div id="welcome_back_text" style="font-family: 'stevie-sans', monospace; font-size: 16pt; font-weight: 200pt; color: var(--darkcyan); text-align: center;"></div>
+        
+            <!-- "Go to Feed" button -->
+            <button id="gtf_button" class="button_nav1" style="margin: auto;"></button>
+            <!-- ^ See buttons.css
+                                                   for button styles. -->
+        </div>
+        <!-- ======== WELCOME BACK MESSAGE (END) ======== -->
+
             <form id="website_login_form"> <!-- This ID is an attribute. -->
 
                 <!-- Prompt user for Username -->
@@ -117,8 +110,10 @@
 
         <!-- ======== LOGIN FORM (END) ======== -->
 
-        <!-- Access the JS file "index.js" -->
-        <script src="/js/index.js"></script>
+        <!-- ======== JAVASCRIPT (START) ======== -->
+        <script src="/js/header_navbar.js"></script>    <!-- Access the JS file "header_navbar.js" -->
+        <script src="/js/index.js"></script>            <!-- Access the JS file "index.js" -->
+        <!-- ======== JAVASCRIPT (END) ======== -->
 
     </body>
 </html>

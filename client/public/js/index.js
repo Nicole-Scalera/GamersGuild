@@ -15,8 +15,7 @@ const username_input = document.getElementById("login_username_input")  // Usern
 const email_input = document.getElementById("login_email_input")        // Email Prompt Box
 const password_input = document.getElementById("login_password_input")  // Password Prompt Box
 const welcome_back = document.getElementById("welcome_back_text")       // Welcome back message
-const gt_feed_button = document.getElementById("gtf_button")            // "Go to Feed" Button
-const header_logo = document.getElementById("gg_header_logo")           // Logo in Header
+const gt_feed_button = document.getElementById("gtf_button")            // "Go to Feed" Button            // Insert Navigational Bar
 const prompt = document.getElementById("credentials_prompt")            // Prompt User for Credentials
 
 // -----------------------------------
@@ -32,26 +31,6 @@ const init = () => {
 
 }
 // -------- ON STARTUP (END) --------
-
-
-// -------- HEADER LOGO (START) --------
-const header_logo_homepage = () => {
-
-    // If the header logo is clicked, the user
-    // will be taken to the homepage.
-    
-    const header_logo_link = document.createElement("a")
-
-    // When the button is clicked
-    header_logo.onclick = (event) => {
-        // Link to user's homepage
-        location.href = `/index.html`
-    }
-    
-    header_logo.appendChild(header_logo_link) // node we're attaching is header_logo_link
-
-}
-// -------- HEADER LOGO (END) --------
 
 
 // -------- WELCOME BACK MESSAGE (START) --------
@@ -140,5 +119,4 @@ login_form.onsubmit = (event) => {
 
 // -------- STARTUP FUNCTIONS (START) --------
 init()
-header_logo_homepage()
 // -------- STARTUP FUNCTIONS (END) --------
