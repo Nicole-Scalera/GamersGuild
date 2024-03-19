@@ -12,7 +12,7 @@ app.use(express.static('client/public')); // Allows us to access public files.
 // Middleware
 
 // the '/' goes to the homepage of the app
-app.get(['/', '/index'], function (req, res) {
+app.get(['/', '/index.html'], function (req, res) {
     // This is what you get back: a file named 'index.html' that displays the homepage
     res.sendFile('index.html', { root: './client/views' })
     // res is the "response," what the client actually gets
