@@ -15,7 +15,7 @@ const header_logo_homepage = () => {
     // When the button is clicked
     header_logo.onclick = (event) => {
         // Link to user's homepage
-        location.href = `/index`
+        location.href = `/index.html`
     }
 
     header_logo.appendChild(header_logo_link) // node we're attaching is header_logo_link
