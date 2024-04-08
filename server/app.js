@@ -8,8 +8,15 @@ const PORT = process.env.PORT || 1337;
 const express = require('express'); // Express is a dependency that needs
 const app = express();              // to be installed through the terminal.
 
-app.use(express.static('client/public')); // Allows us to access public files.
-// Middleware
+// This is including the userRoute route.
+// It links it to that directory.
+let userRoutes = require('.route/userRoute');
+
+// Allows us to access public files.
+app.use(express.static('../client/public')); // Middleware
+//                      ^ It's '..' because you're
+//                        going back a folder.
+
 
 // Route Handler for Homepage ---------------------
 app.get(['/', '/index.html'], function (req, res) {
