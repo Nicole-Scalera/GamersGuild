@@ -1,7 +1,7 @@
 // http://localhost:1337
 // ^ CLICK ME
 
-const PORT = process.env.PORT || 1338;
+const PORT = process.env.PORT || 1337;
              // If this process.env port is
              // not defined, then 1337 is chosen.
 
