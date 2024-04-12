@@ -1,28 +1,32 @@
 // http://localhost:1337
 // ^ CLICK ME
 
-const PORT = process.env.PORT || 1337;
+const PORT = process.env.PORT || 1338;
              // If this process.env port is
              // not defined, then 1337 is chosen.
 
 const express = require('express'); // Express is a dependency that needs
 const app = express();              // to be installed through the terminal.
 
-// This is including the userRoute route.
-// It links it to that directory.
-let userRoutes = require('.route/userRoute');
+// // This is including the userRoute route.
+// // It links it to that directory.
+// let userRoutes = require('.route/userRoute');
 
 // Allows us to access public files.
-app.use(express.static('../client/public')); // Middleware
-//                      ^ It's '..' because you're
-//                        going back a folder.
+app.use(express.static('./client/public')); // Middleware
+// DO NOT ADD MORE THAN ONE DOT HERE!!!
+// When application runs, the app.js directs
+// the server to that location.
+
+
 
 
 // Route Handler for Homepage ---------------------
 app.get(['/', '/index.html'], function (req, res) {
 //        ^ The '/' goes to the homepage of the app.
     res.sendFile('index.html', { root: './client/views' })
-})
+})                               // Serving up the public folder
+                                 // by the dot here.
 
 // Notes:
 //      - This is what you get back: a file named 'index.html' that displays the homepage.
