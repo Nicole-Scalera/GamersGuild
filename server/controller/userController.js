@@ -12,15 +12,24 @@
 // }
 
 // ------------------------------------------
+// Import the model we created
+const User = require('../model/user');
+// We're basically "catching" the export that was
+// "thrown" to us from user.js in the model folder.
+// ------------------------------------------
+
+// ------------------------------------------
 // Create an empty array that will contain the
 // user model instances that are created.
 let users = [];
 
-// Create a user
-let peter = User.createUser("Peter", "Parker")
+// Create a few users
+let peter = new User("Peter", "Parker")
+let john = new User("John", "Doe")
 
 // add the user to the array
-users.push(peter);
+users.push(peter); // user 1
+users.push(john); // user 2
 // ------------------------------------------
 
 
@@ -41,7 +50,7 @@ exports.getUser = (req, res) => {
 
 // Save a user
 exports.saveUser = (req, res) => {
-    let newUser = User.createUser(req.body.firstName, req.body.lastName);
+    let newUser = new User(req.body.firstName, req.body.lastName);
     users.push(newUser);
     res.setHeader('Content-Type', 'application/json');
     res.send(users);

@@ -8,9 +8,19 @@ const PORT = process.env.PORT || 1337;
 const express = require('express'); // Express is a dependency that needs
 const app = express();              // to be installed through the terminal.
 
+// Body-parser is needed for Postman
+const bodyParser = require('body-parser');
+app.use(bodyParser.json({type:'application/json'}));
+
 // // This is including the userRoute route.
 // // It links it to that directory.
 // let userRoutes = require('.route/userRoute');
+// const userRoutes = require('./route/userRoutes');
+// app.use('/api/user',userRoutes)
+
+let userRoutes = require('./route/userRoutes');
+app.use('/api/user', userRoutes);
+
 
 // Allows us to access public files.
 app.use(express.static('./client/public')); // Middleware
