@@ -9,14 +9,16 @@ const Feed = require('../model/feed');
 
 // ------------------------------------------
 // Create an empty array that will contain the
-// user model instances that are created.
+// feed posts model instances that are created.
 let feed = [];
 
-// Create a few users
+// Create a few feed posts
 let feed1 = new Feed("1", "Hello, this is a post!", "yes", "This is a comment.")
+let feed2 = new Feed("2", "This is yet another post!", "no", "This is another comment.")
 
 // add the feed post to the array
 feed.push(feed1); // Feed post 1
+feed.push(feed2); // Feed post 1
 // ------------------------------------------
 
 // ------------------------------------------
@@ -40,5 +42,75 @@ exports.saveFeed = (req, res) => {
     feed.push(newFeed);
     res.setHeader('Content-Type', 'application/json');
     res.send(feed);
+}
+
+// Complete update of feed post
+exports.updateFeed = (req, res) => {                      // PUT
+
+    // Create consts to access the elements
+    // of a Feed class.
+    const feedID = req.params.index;
+    const userID = req.body.userID;
+                         // ^ userID is apart of the body,
+                         // unlike in userController.js
+    const description = req.body.description;
+    const like = req.body.like;
+    const comment = req.body.comment;
+
+    // Update feed with new data
+    feed[feedID] = new Feed(userID, description, like, comment);
+    //    ^ Get index of feed post
+
+    // Send back a reponse to the Postman
+    res.send(feed[feedID]); // Send back that specific feed post
+
+}
+
+// Partial update of feed post (AKA "surgical removal")
+exports.patchFeed = (req, res) => {                      // PATCH
+
+    // Create consts to access the elements
+    // of a User class.
+    const feedID = req.params.index;
+    const userID = req.body.userID;
+    const description = req.body.description;
+    const like = req.body.like;
+    const comment = req.body.comment;
+
+    // Update user with new data
+    if (userID) {                            // If there is anything in the userID,
+        feed[feedID].userID = userID;        // then it will execute the update.
+    }
+
+    if (description) {                              // If there is anything in the description,
+        feed[feedID].description = description;     // then it will execute the update.
+    }
+
+    if (like) {                       // If there is anything in the like,
+        feed[feedID].like = like;     // then it will execute the update.
+    }
+
+    if (comment) {                       // If there is anything in the comment,
+        feed[feedID].comment = comment;  // then it will execute the update.
+    }
+
+    // Send back a reponse to the Postman
+    res.send(feed); // Send the whole list of feed posts
+
+}
+
+// Delete feed post
+exports.deleteFeed = (req, res) => {                      // DELETE
+
+    // Create consts to access the elements
+    // of a Feed class.
+    const feedID = req.params.index;
+
+    // Delete the feed post with the specific ID
+    feed.splice(feedID, 1);
+
+    // Send back a reponse to the Postman
+    res.send(feed); // Send the whole list of feed posts
+
 }
 // ------------------------------------------
