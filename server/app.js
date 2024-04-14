@@ -1,6 +1,7 @@
 // http://localhost:1337
 // ^ CLICK ME
 
+// ------------------------------------------------
 const PORT = process.env.PORT || 1337;
              // If this process.env port is
              // not defined, then 1337 is chosen.
@@ -11,25 +12,23 @@ const app = express();              // to be installed through the terminal.
 // Body-parser is needed for Postman
 const bodyParser = require('body-parser');
 app.use(bodyParser.json({type:'application/json'}));
+// ------------------------------------------------
 
-// // This is including the userRoute route.
-// // It links it to that directory.
-// let userRoutes = require('.route/userRoute');
-// const userRoutes = require('./route/userRoutes');
-// app.use('/api/user',userRoutes)
-
+// ------------------------------------------------
+// This will include the userRoute route.
 let userRoutes = require('./route/userRoutes');
 app.use('/api/user', userRoutes);
 
+// This will include the feedRoute route.
+let feedRoute = require('./route/feedRoute');
+app.use('/api/backendfeed', feedRoute);
 
 // Allows us to access public files.
 app.use(express.static('./client/public')); // Middleware
 // DO NOT ADD MORE THAN ONE DOT HERE!!!
 // When application runs, the app.js directs
 // the server to that location.
-
-
-
+// ------------------------------------------------
 
 // Route Handler for Homepage ---------------------
 app.get(['/', '/index.html'], function (req, res) {
