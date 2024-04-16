@@ -1,16 +1,3 @@
-// The controller is supposed to handle the functions that come in.
-
-// const createNewUser = async (request,response) => {
-//     // Takes in the request, and sends out a response
-//     // Parse the user's password.
-//     // Save the user to database.
-//     // send a reponse out from the function
-//     // (could be something like success:true).
-
-//     // The views folder handles sending down HTML
-
-// }
-
 // ------------------------------------------
 // Import the model we created
 const User = require('../model/user');
@@ -115,7 +102,7 @@ exports.deleteUser = (req, res) => {                      // DELETE
     // Delete the user with the specific ID
     users.splice(userID,1);
 
-    // Send back a reponse to the Postman
+    // Send back a response to the Postman
     res.send(users); // Send the whole list of users
 
 }
