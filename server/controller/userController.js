@@ -11,8 +11,8 @@ const User = require('../model/user');
 let users = [];
 
 // Create a few users
-let peter = new User("Peter", "Parker")
-let john = new User("John", "Doe")
+let peter = new User("Peter", "Parker", "1")
+let john = new User("John", "Doe", "2")
 
 // add the user to the array
 users.push(peter); // user 1

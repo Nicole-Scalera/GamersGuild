@@ -3,9 +3,10 @@
 // about shape, we're talking about an object.
 
 class User {
-    constructor(firstName, lastName) {
+    constructor(firstName, lastName, userID) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.userID = userID;
     }
 }
 
