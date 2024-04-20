@@ -30,7 +30,7 @@ router.patch('/:index', userController.patchUser)
 router.delete('/:index', userController.deleteUser)
 // ------------------------------------------
 
-// Add the routes we create within to this file to
-// exports so they are accessible in the files that
-// require it.
+// Add the routes we create within to this
+// file to exports so they are accessible
+// in the files that require it.
 module.exports = router;

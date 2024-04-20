@@ -48,8 +48,6 @@
         <!-- ======== CREDENTIALS PROMPT (END) ======== -->
 
 
-
-        <!-- ================================================================================================================================== -->
         <!-- ======== LOGIN FORM (START) ======== -->
         <div class="box1" style="margin: auto; background-color: var(--moonstonebluelighter1);"> <!-- create the background box -->
             
@@ -67,14 +65,51 @@
         </div>
         <!-- ======== WELCOME BACK MESSAGE (END) ======== -->
 
-            
+            <form id="website_login_form"> <!-- This ID is an attribute. -->
+
+                <!-- Prompt user for Username -->
+                <div style="padding-bottom: 10px;">
+                    <label>     <!-- Font Name                              Font Size        Font Weight         Text Color -->
+                        <span style="font-family: 'stevie-sans', monospace; font-size: 16pt; font-weight: 400pt; color: #000000; vertical-align: middle;">
+                        Username:
+                        </span>
+                    </label>
+                    <!-- "type" would be text because it's a string. -->
+                    <input type="text" name="username" id="login_username_input">
+                </div>
+
+
+                <!-- Prompt user for Email -->
+                <div style="padding-bottom: 10px;">
+                    <label>     <!-- Font Name                              Font Size        Font Weight         Text Color -->
+                        <span style="font-family: 'stevie-sans', monospace; font-size: 16pt; font-weight: 400pt; color: #000000; vertical-align: middle;">
+                        Email:
+                        </span>
+                    </label>
+                    <!-- We don't need to close this. Also note that Name is
+                        different from an ID. ID is globally unique identifier. -->
+                    <input type="email" name="email" id="login_email_input">
+                </div>
+
+                <!-- Prompt user for Password -->
+                <div style="padding-bottom: 10px;">
+                    <label>     <!-- Font Name                              Font Size        Font Weight         Text Color -->
+                        <span style="font-family: 'stevie-sans', monospace; font-size: 16pt; font-weight: 400pt; color: #000000; vertical-align: middle;">
+                        Password:
+                        </span>
+                    </label>
+                    <input type="password" name="password" id="login_password_input">
+                </div>
+
+                <!-- Login Submit Button -->
+                <div>
+                    <button type="submit">Login</button>
+                </div>
+            </form> <!-- close the form -->
         </div> <!-- close the background box -->
 
         <!-- ======== LOGIN FORM (END) ======== -->
-        <!-- ================================================================================================================================== -->
 
-
-        
         <!-- ======== JAVASCRIPT (START) ======== -->
         <script src="/js/header_navbar.js"></script>    <!-- Access the JS file "header_navbar.js" -->
         <script src="/js/index.js"></script>            <!-- Access the JS file "index.js" -->
