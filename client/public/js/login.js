@@ -43,8 +43,7 @@ const init = () => {
                 // Display first name, last name, and user ID of user
                 table_row.textContent = user.firstName + ' ' + user.lastName + ' ' + user.userID
 
-                table_row.innerHTML = '<a onclick = open_feed_posts(' + user.userID + ') >' + user.firstName + ' ' + user.lastName + '</a>'
-
+                table_row.innerHTML = '<td><button onclick = open_feed_posts(' + user.userID + ') >' + user.firstName + ' ' + user.lastName + '</button></td><td>' + user.userID + '</td>'
 
                 // Create a button for the name (so it can be styled later)
                 //const user_button = document.createElement('a')

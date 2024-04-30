@@ -38,7 +38,18 @@
 
         <!-- ======== JAVASCRIPT (START) ======== -->
         <script src="/js/header_navbar.js"></script>    <!-- Access the JS file "header_navbar.js" -->
-        <script src="/js/content.js"></script>          <!-- Access the JS file "content.js" -->
+        <!-- <script src="/js/content.js"></script>          Access the JS file "content.js" -->
+        
+        <script>
+            
+            // Create query_string
+            const query_string = window.location.search;
+            
+            // Pass query_string into this
+            const url_params = new URLSearchParams(query_string);
+            console.log(url_params.getAll('username'));
+
+        </script>
         <!-- ======== JAVASCRIPT (END) ======== -->
 
     </body>

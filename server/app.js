@@ -59,8 +59,12 @@ app.get('/login', function (req, res) {
 
 
 // Route Handler for Feed -------------------------
-app.get('/feed/:username', function (req, res) {            // computer understands the
-    res.sendFile('feed.html', { root: './client/views' })   // username parameter.
+//              Change this to a userID later instead of a username
+app.get('/feed/:username', function (req, res) { // It is treating everything after the colon (:) as a username.
+    console.log("Here's an example message before.");
+    console.log("Feed page called with username: " + req.params.username);                  // computer understands the
+    console.log("Here's an example message after.");
+    res.sendFile('feed.html', { root: './client/views', query: { username: req.params.username }})   // username parameter.
 })
 // ------------------------------------------------
 
