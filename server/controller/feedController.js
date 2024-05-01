@@ -36,6 +36,24 @@ exports.getFeed = (req, res) => {
     res.send(feed[req.params.index]);
 }
 
+
+// Retrieve the feed by the userID
+exports.getFeedsByUserID = (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    console.log("getFeedsByUserID: " + req.params.userID);
+
+    var user_feeds;
+
+    for (i in feed) {
+        if (feed[i].userID = req.params.userID) {
+            user_feeds.push(feed[i])
+        }
+    }
+
+    //res.send(feed[req.params.userID]); // Get the userID
+}
+
+
 // Save a feed post
 exports.saveFeed = (req, res) => {
     let newFeed = new Feed(req.body.userID, req.body.description, req.body.like, req.body.comment);

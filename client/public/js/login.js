@@ -22,6 +22,12 @@ const gt_feed_button = document.getElementById("gtf_button")            // "Go t
 // This will open the feed posts
 function open_feed_posts(userID) {
     console.log("user clicked with user ID " + userID)
+    var now = new Date();
+    var expire_time = 60000;
+    now.setTime(now.getTime() + expire_time);
+    document.cookie = "userID=" + userID + "; expires="
+        + now.toUTCString() + ";";
+    window.location = "/feed"
 }
 // -----------------------------------
 

@@ -38,19 +38,32 @@
 
         <!-- ======== JAVASCRIPT (START) ======== -->
         <script src="/js/header_navbar.js"></script>    <!-- Access the JS file "header_navbar.js" -->
+        <script src="/js/feed.js"></script>             <!-- Access the JS file "feed.js" -->
         <!-- <script src="/js/content.js"></script>          Access the JS file "content.js" -->
-        
+    
+
         <script>
             
-            // Create query_string
-            const query_string = window.location.search;
-            
-            // Pass query_string into this
-            const url_params = new URLSearchParams(query_string);
-            console.log(url_params.getAll('username'));
+            var value = ";" + document.cookie;
+            var parts = value.split(";userID=");
+            console.log("cookie " + parts);
+            if (parts.length == 2)
+                console.log("userID is: " + parts.pop().split(";").shift());
 
         </script>
         <!-- ======== JAVASCRIPT (END) ======== -->
 
     </body>
 </html>
+
+
+
+
+<!-- Archived Code -->
+
+            <!-- // // Create query_string
+            // const query_string = window.location.search;
+            
+            // // Pass query_string into this
+            // const url_params = new URLSearchParams(query_string);
+            // console.log(url_params.getAll('username')); -->

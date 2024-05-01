@@ -15,6 +15,9 @@ router.get('/', feedController.getAllFeeds); // Now get that getAllFeeds functio
 // Get for a SINGLE feed post
 router.get('/:index', feedController.getFeed);
 
+// Get for a
+router.get('/getFeedsByUserID', feedController.getFeedsByUserID);
+
 // POST method (not like a feed post)
 router.post('/', feedController.saveFeed);
 
