@@ -1,55 +1,65 @@
+//TODO
 const user_feeds = document.getElementById("user_feeds")
+const user_name_section = document.getElementById("Logged_in_user")
+
 const base_url = "http://localhost:1337"
+
+const create_new_post = () => {
+    window.location.href = base_url + "/create-post"
+}
 
 // -------- ON STARTUP (START) --------
 const init = () => {
 
     // Start a fetch call to backend service
     // to get all the users and display them
-    fetch(base_url + "/api/backendfeed/getFeedsByUserID")
-        .then(response => response.json())
+    console.log("In Feed.js");
 
-        // For each user listed...
-        .then(feeds => {
-            feeds.forEach(feed => {
+    //TODO
+    //Getting userID from the cookie
+    var value = ";" + document.cookie;
+    var parts = value.split(";userID=");
+    var userID;
 
-                // ... create a table row
-                const table_row = document.createElement('tr')
+    console.log("cookie " + parts);
 
-                // // Display first name, last name, and user ID of user
-                // table_row.textContent = user.firstName + ' ' + user.lastName + ' ' + user.userID
+    if (parts.length == 2) {
+        userID = parts.pop().split(";").shift();
+        console.log("userID is: " + userID);
 
-                //table_row.innerHTML = '<td><button onclick = open_feed_posts(' + user.userID + ') >' + user.firstName + ' ' + user.lastName + '</button></td><td>' + user.userID + '</td>'
+        //Get user name for the logged in user
+        fetch(base_url + "/api/user/" + userID)
+            .then(response => response.json())
+            .then(user => {
+                console.log("user name: " + user.firstName)
+                user_name_section.innerHTML = "Welcome " + user.firstName + " " + user.lastName
+            })
+            .catch(error => console.error('Error in fetching user name: ', error));
 
-                console.log("Feed description: " + feed.description);
+        fetch(base_url + "/api/backendfeed/user/" + userID + "/feeds")
+            .then(response => response.json())
 
-                // Create a button for the name (so it can be styled later)
-                //const user_button = document.createElement('a')
+            // For each user listed...
+            .then(feeds => {
+                feeds.forEach(feed => {
+                    // ... create a table row
+                    const table_row = document.createElement('tr')
+                    console.log("Feed description: " + feed.description);
 
-                // Assign the individual ID for that button on the page
-                // according to the user's individual ID
-                // user_button.id = 'user_button_' + user.userID
+                    table_row.innerHTML = '<td>' + feed.description + '</td><td>' + feed.comment + '</td>'
 
-                // user_button.className = 'button_nav1' // Assign the class name
-                // user_button.style = 'margin: auto;' // Configure the style of the button
+                    user_feeds.appendChild(table_row)
 
-                // // Open the feed posts of that individual user
-                // user_button.onclick = 'open_feed_posts(' + user.userID + ')'
+                }); // Close this with a semi colon
+            })
 
-                // Add table row with user to the user table
-                all_users_table.appendChild(table_row)
-
-                console.log(user.firstName); // For debugging
-
-            }); // Close this with a semi colon
-        })
-
-        // Exception handling for call to the users API
-        .catch(error => console.error('Error in fetching users: ', error));
-
-    // Prompt User for Credentials
+            // Exception handling for call to the Feeds API
+            .catch(error => console.error('Error in fetching user Feeds: ', error));
+    }
 
 }
 // -------- ON STARTUP (END) --------
+
+
 
 init()

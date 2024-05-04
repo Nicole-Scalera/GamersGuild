@@ -1,47 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- Links should be in Alphabetical Order -->
-    <link rel="stylesheet" href="/css/boxes.css"></link> <!-- Boxes -->
-    <link rel="stylesheet" href="/css/buttons.css"></link> <!-- Buttons -->
-    <link rel="stylesheet" href="/css/colors.css"></link> <!-- Colors -->
-    <link rel="stylesheet" href="/css/fonts.css"></link> <!-- Fonts -->
-    <link rel="stylesheet" href="/css/globals.css"></link> <!-- Globals -->
-    <link rel="stylesheet" href="/css/images.css"></link> <!-- Images -->
-    <link rel="stylesheet" href="/css/text.css"></link> <!-- Text -->
-    
+    <link rel="stylesheet" href="/css/boxes.css">
+    </link> <!-- Boxes -->
+    <link rel="stylesheet" href="/css/buttons.css">
+    </link> <!-- Buttons -->
+    <link rel="stylesheet" href="/css/colors.css">
+    </link> <!-- Colors -->
+    <link rel="stylesheet" href="/css/fonts.css">
+    </link> <!-- Fonts -->
+    <link rel="stylesheet" href="/css/globals.css">
+    </link> <!-- Globals -->
+    <link rel="stylesheet" href="/css/images.css">
+    </link> <!-- Images -->
+    <link rel="stylesheet" href="/css/text.css">
+    </link> <!-- Text -->
+
     <!-- Page Title -->
     <title>Feed</title>
 
 </head>
-    <body>
 
-        <!-- ======== HEADER (START) ======== -->
-        <div class="headerbox">
-            <input type="image" src="/img/logo/Logo_White_BlackOutline.svg" alt="Gamers Guild Logo" class="headerlogo"
-                id="gg_header_logo"></input>
-        
-            <!-- ======== NAVIGATIONAL BAR (START) ======== -->
-            <div class="navbarbox" id="navigationalbar"></div>
-            <!-- ======== NAVIGATIONAL BAR (END) ======== -->
-        </div>
-        <!-- ======== HEADER (END) ======== -->
+<body>
+
+    <!-- ======== HEADER (START) ======== -->
+    <div class="headerbox">
+        <input type="image" src="/img/logo/Logo_White_BlackOutline.svg" alt="Gamers Guild Logo" class="headerlogo"
+            id="gg_header_logo"></input>
+
+        <!-- ======== NAVIGATIONAL BAR (START) ======== -->
+        <div class="navbarbox" id="navigationalbar"></div>
+        <!-- ======== NAVIGATIONAL BAR (END) ======== -->
+    </div>
+    <!-- ======== HEADER (END) ======== -->
+
+    <!-- ======== NEW POST (START) ======== -->
+    <div id="login_prompt">
+        <button onclick="create_new_post()" class="button_nav1" style="font-family: stevie-sans, monospace; font-size: 12pt; font-weight: 200pt;">Create New Post</button>
+    </div>
+    <!-- ======== NEW POST (END) ======== -->
 
 
-        <div id="posts-container" class="post1"></div>
+    <!-- ======== TODO ======== -->
+    <div id="Logged_in_user"> </div>
+
+    <div id="posts-container" class="post1">
+        <table id="user_feeds">
+            <th>Feed Description</th>
+            <th>Feed Comment</th>
+        </table>
+    </div>
 
 
 
 
-        <!-- ======== JAVASCRIPT (START) ======== -->
-        <script src="/js/header_navbar.js"></script>    <!-- Access the JS file "header_navbar.js" -->
-        <script src="/js/feed.js"></script>             <!-- Access the JS file "feed.js" -->
-        <!-- <script src="/js/content.js"></script>          Access the JS file "content.js" -->
-    
+    <!-- ======== JAVASCRIPT (START) ======== -->
+    <script src="/js/header_navbar.js"></script> <!-- Access the JS file "header_navbar.js" -->
+    <script src="/js/feed.js"></script> <!-- Access the JS file "feed.js" -->
+    <!-- <script src="/js/content.js"></script>          Access the JS file "content.js" -->
 
+    <!---
         <script>
             
             var value = ";" + document.cookie;
@@ -51,9 +74,11 @@
                 console.log("userID is: " + parts.pop().split(";").shift());
 
         </script>
-        <!-- ======== JAVASCRIPT (END) ======== -->
+        -->
+    <!-- ======== JAVASCRIPT (END) ======== -->
 
-    </body>
+</body>
+
 </html>
 
 
@@ -61,7 +86,7 @@
 
 <!-- Archived Code -->
 
-            <!-- // // Create query_string
+<!-- // // Create query_string
             // const query_string = window.location.search;
             
             // // Pass query_string into this

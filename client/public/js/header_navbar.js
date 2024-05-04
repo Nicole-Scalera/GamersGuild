@@ -23,6 +23,11 @@ const header_logo_homepage = () => {
 }
 // -------- HEADER LOGO (END) --------
 
+// // ------ HEADER ITEMS (START) -------
+// const init = () => {
+//     const navbar_row = document.createElement('tr')
+// }
+// // ------- HEADER ITEMS (END) --------
 
 // -------- STARTUP FUNCTIONS (START) --------
 header_logo_homepage()

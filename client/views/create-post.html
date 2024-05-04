@@ -1,0 +1,79 @@
+<!-- This is the Homepage -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Links should be in Alphabetical Order -->
+    <link rel="stylesheet" href="/css/boxes.css">
+    </link> <!-- Boxes -->
+    <link rel="stylesheet" href="/css/buttons.css">
+    </link> <!-- Buttons -->
+    <link rel="stylesheet" href="/css/colors.css">
+    </link> <!-- Colors -->
+    <link rel="stylesheet" href="/css/fonts.css">
+    </link> <!-- Fonts -->
+    <link rel="stylesheet" href="/css/globals.css">
+    </link> <!-- Globals -->
+    <link rel="stylesheet" href="/css/images.css">
+    </link> <!-- Images -->
+    <link rel="stylesheet" href="/css/text.css">
+    </link> <!-- Text -->
+
+    <!-- Page Title -->
+    <title>Create Post</title>
+
+</head>
+
+<body>
+
+    <!-- ======== HEADER (START) ======== -->
+    <div class="headerbox">
+        <input type="image" src="/img/logo/Logo_White_BlackOutline.svg" alt="Gamers Guild Logo" class="headerlogo"
+            id="gg_header_logo"></input>
+
+        <!-- ======== NAVIGATIONAL BAR (START) ======== -->
+        <div class="navbarbox" id="navigationalbar"></div>
+        <!-- ======== NAVIGATIONAL BAR (END) ======== -->
+    </div>
+    <!-- ======== HEADER (END) ======== -->
+
+
+    <!-- ======== NEW POST FORM (START) ======== -->
+    <form>
+        <!-- Prompt user for post caption -->
+        <div style="padding-bottom: 10px;">
+            <label> <!-- Font Name                              Font Size        Font Weight         Text Color -->
+                <span style="font-family: 'stevie-sans', monospace; font-size: 16pt; font-weight: 400pt; color: #000000; vertical-align: middle;">
+                    Post Caption:
+                </span>
+            </label>
+            <!-- We don't need to close this. Also note that Name is
+                                different from an ID. ID is globally unique identifier. -->
+            <input type="text" name="post_caption" id="post_caption_id">
+        </div>
+        
+        <!-- Login Submit Button -->
+    </form>
+
+    <!-- This is outside the form so it doesn't submit the form. -->
+    <div>
+        <button onclick="submit_post()">Share</button>
+    </div>
+
+    <!-- ========= NEW POST FORM (END) ========= -->
+
+
+    <!-- ======== ALL FEEDS (START) ======== -->
+    <!-- ======== ALL FEEDS (END) ======== -->
+
+    <!-- ======== JAVASCRIPT (START) ======== -->
+    <script src="/js/create-post.js"></script>
+    <!-- ======== JAVASCRIPT (END) ======== -->
+
+</body>
+
+</html>

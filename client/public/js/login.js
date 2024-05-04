@@ -51,6 +51,7 @@ const init = () => {
 
                 table_row.innerHTML = '<td><button onclick = open_feed_posts(' + user.userID + ') class="button_nav1" style="font-family: stevie-sans, monospace; font-size: 12pt; font-weight: 200pt;">' + user.firstName + ' ' + user.lastName + '</button></td><td>' + user.userID + '</td>'
                 // Create a button for the name (so it can be styled later)
+                
                 //const user_button = document.createElement('a')
 
                 // Assign the individual ID for that button on the page

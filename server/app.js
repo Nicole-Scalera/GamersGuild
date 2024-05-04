@@ -91,6 +91,14 @@ app.get('/api/posts', function (req, res) {
 // ------------------------------------------------
 
 
+// Route Handler for Creating Posts ---------------
+app.get('/create-post', function (req, res) {
+    console.log("We are creating a new post.");
+    res.sendFile('create-post.html', { root: './client/views' })
+})
+// ------------------------------------------------
+
+
 // Port Information in Console --------------------
 app.listen(PORT, () => console.log('Marist Chatter listening on this port ' + PORT + '!')); // NOT hardcoded.
 // Notes:

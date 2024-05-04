@@ -1,24 +1,13 @@
 // The controller is supposed to handle the functions that come in.
 
 // ------------------------------------------
+
+//TODO
 // Import the model we created
-const Feed = require('../model/feed');
-// We're basically "catching" the export that was
-// "thrown" to us from feed.js in the model folder.
-// ------------------------------------------
+// const Feed = require('../model/feed');
 
-// ------------------------------------------
-// Create an empty array that will contain the
-// feed posts model instances that are created.
-let feed = [];
+const feedService = require('../service/feedService');
 
-// Create a few feed posts
-let feed1 = new Feed("1", "Hello, this is a post!", "yes", "This is a comment.")
-let feed2 = new Feed("2", "This is yet another post!", "no", "This is another comment.")
-
-// add the feed post to the array
-feed.push(feed1); // Feed post 1
-feed.push(feed2); // Feed post 1
 // ------------------------------------------
 
 // ------------------------------------------
@@ -26,40 +15,29 @@ feed.push(feed2); // Feed post 1
 // response as json.
 exports.getAllFeeds = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    res.send(feed);
+    res.send(feedService.getAllFeeds()); // Perform a GET ALL of feeds
 }
 
 // Retrieve the feed in the :index parameter
 // of the request and return as json.
 exports.getFeed = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    res.send(feed[req.params.index]);
+    res.send(feedService.getFeed(req.params.index));
 }
-
 
 // Retrieve the feed by the userID
 exports.getFeedsByUserID = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    console.log("getFeedsByUserID: " + req.params.userID);
 
-    var user_feeds;
-
-    for (i in feed) {
-        if (feed[i].userID = req.params.userID) {
-            user_feeds.push(feed[i])
-        }
-    }
-
-    //res.send(feed[req.params.userID]); // Get the userID
+    // Get the feed by the userID
+    res.send(feedService.getFeedsByUserID(req.params.userID));
 }
 
-
+// TODO
 // Save a feed post
 exports.saveFeed = (req, res) => {
-    let newFeed = new Feed(req.body.userID, req.body.description, req.body.like, req.body.comment);
-    feed.push(newFeed);
     res.setHeader('Content-Type', 'application/json');
-    res.send(feed);
+    res.send(feedService.saveFeed(req.body.userID, req.body.caption));
 }
 
 // Complete update of feed post
@@ -69,8 +47,8 @@ exports.updateFeed = (req, res) => {                      // PUT
     // of a Feed class.
     const feedID = req.params.index;
     const userID = req.body.userID;
-                         // ^ userID is apart of the body,
-                         // unlike in userController.js
+    // ^ userID is apart of the body,
+    // unlike in userController.js
     const description = req.body.description;
     const like = req.body.like;
     const comment = req.body.comment;
