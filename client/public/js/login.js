@@ -49,20 +49,7 @@ const init = () => {
                 // Display first name, last name, and user ID of user
                 table_row.textContent = user.firstName + ' ' + user.lastName + ' ' + user.userID
 
-                table_row.innerHTML = '<td><button onclick = open_feed_posts(' + user.userID + ') class="button_nav1" style="font-family: stevie-sans, monospace; font-size: 12pt; font-weight: 200pt;">' + user.firstName + ' ' + user.lastName + '</button></td><td>' + user.userID + '</td>'
-                // Create a button for the name (so it can be styled later)
-                
-                //const user_button = document.createElement('a')
-
-                // Assign the individual ID for that button on the page
-                // according to the user's individual ID
-                // user_button.id = 'user_button_' + user.userID
-
-                // user_button.className = 'button_nav1' // Assign the class name
-                // user_button.style = 'margin: auto;' // Configure the style of the button
-                
-                // // Open the feed posts of that individual user
-                // user_button.onclick = 'open_feed_posts(' + user.userID + ')'
+                table_row.innerHTML = '<td><button onclick = open_feed_posts(' + user.userID + ') class="button_nav1">' + user.firstName + ' ' + user.lastName + '</button></td><td>' + user.userID + '</td>'
 
                 // Add table row with user to the user table
                 all_users_table.appendChild(table_row)

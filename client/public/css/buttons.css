@@ -3,14 +3,21 @@
  * like "Go to Feed." It does not appear on the
  * hot bar header that is on every page. */
 .button_nav1 {
+    /* Box Information */
     background-color: var(--darkcyan);
     border: none;
     border-radius: 1.10em 1.10em 1.10em 1.10em;
     color: white;
-    padding: 3px 12px;
-    text-align: center;
+    padding: 0.5em 1em; /* Height, Width */
+    margin-top: 5%;
     display: inline-block;
-    font-size: 20px;
+
+    /* Text Information */
+    font-family: "stevie-sans";
+    font-size: 16px;
+    text-align: center;
+    font-weight: 200pt;
+
 }
 
 /* ----- NAVIGATIONAL BUTTON 1 - HOVER -----*/

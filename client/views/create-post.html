@@ -43,25 +43,28 @@
 
 
     <!-- ======== NEW POST FORM (START) ======== -->
-    <form>
-        <!-- Prompt user for post caption -->
-        <div style="padding-bottom: 10px;">
-            <label> <!-- Font Name                              Font Size        Font Weight         Text Color -->
-                <span style="font-family: 'stevie-sans', monospace; font-size: 16pt; font-weight: 400pt; color: #000000; vertical-align: middle;">
-                    Post Caption:
-                </span>
-            </label>
-            <!-- We don't need to close this. Also note that Name is
-                                different from an ID. ID is globally unique identifier. -->
-            <input type="text" name="post_caption" id="post_caption_id">
-        </div>
-        
-        <!-- Login Submit Button -->
-    </form>
+    <div class="box1" style="margin: auto; background-color: var(--moonstonebluelighter1);">
+        <!-- create the background box -->
+        <form>
+            <!-- Prompt user for post caption -->
+            <div style="padding-bottom: 10px;">
+                <label> <!-- Font Name                              Font Size        Font Weight         Text Color -->
+                    <span style="font-family: 'stevie-sans', monospace; font-size: 16pt; font-weight: 400pt; color: #000000; vertical-align: middle;">
+                        Post Caption:
+                    </span>
+                </label>
+                <!-- We don't need to close this. Also note that Name is
+                                    different from an ID. ID is globally unique identifier. -->
+                <input type="text" name="post_caption" id="post_caption_id">
+            </div>
+            
+            <!-- Login Submit Button -->
+        </form>
 
-    <!-- This is outside the form so it doesn't submit the form. -->
-    <div>
-        <button onclick="submit_post()">Share</button>
+        <!-- This is outside the form so it doesn't submit the form. -->
+        <div>
+            <button onclick="submit_post()" id="share_button_id" class="button_nav1" style="margin-top: 0;">Share</button>
+        </div>
     </div>
 
     <!-- ========= NEW POST FORM (END) ========= -->

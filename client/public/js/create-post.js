@@ -1,5 +1,7 @@
 const base_url = "http://localhost:1337"                                // Get URL
 const post_caption = document.getElementById("post_caption_id")      // Caption for post
+const share_button = document.getElementById("share_button_id")     // Share button
+
 
 const submit_post = () => {
     // Get the contents of the caption
@@ -33,6 +35,8 @@ const submit_post = () => {
             .then((data) => console.log("Success:", data))
             .catch((error) => console.error("Error:", error));
 
+        // Link to user's feed page
+        window.location.href = base_url + "/feed"
 
     }
 
