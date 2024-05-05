@@ -2,10 +2,6 @@
 
 // ------------------------------------------
 
-//TODO
-// Import the model we created
-// const Feed = require('../model/feed');
-
 const feedService = require('../service/feedService');
 
 // ------------------------------------------
@@ -13,9 +9,9 @@ const feedService = require('../service/feedService');
 // ------------------------------------------
 // Send entire feed array as the body of the
 // response as json.
-exports.getAllFeeds = (req, res) => {
+exports.getAllFeeds = async (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    res.send(feedService.getAllFeeds()); // Perform a GET ALL of feeds
+    res.send(await feedService.getAllFeeds()); // Perform a GET ALL of feeds
 }
 
 // Retrieve the feed in the :index parameter

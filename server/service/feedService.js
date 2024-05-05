@@ -2,8 +2,8 @@
 
 // ------------------------------------------
 
-// Import the model we created
-const Feed = require('../model/feed');
+const Feed = require('../model/feed'); // Import the model we created
+const db = require('../db/connection');
 
 //const Feed = require('../service/feedService');
 
@@ -37,8 +37,42 @@ feed.push(feed6); // Feed post 6
 
 // ------------------------------------------
 // We are just doing a return
-exports.getAllFeeds = () => {
+exports.getAllFeeds = async () => {
+
+    let text = "SELECT * FROM feed";
+
+    try {
+
+        // Pull the feed from the database
+        let res = await db.query(text);
+
+        // Console.log how many rows are detected.
+        console.log("response: " + res.rowCount)
+
+        // If the number of rows is greater than 0...
+        if (res.rows.length > 0) {
+
+            // Get the data from the database (e.g. username, feed description),
+            // and populate the same array that we've been using.
+            for (let i = 0; i < res.rows.length; i++) {
+
+                // Loop through any number of rows in the database (see pgAdmin4 application).
+                let feedX = new Feed(res.rows[i].userID, res.rows[i].feed_description, res.rows[i].feed_like, res.rows[i].comments)
+                feed.push(feedX);
+                // ^^^ Named it feedX because the computer confuses the
+                // feed variable with the actual array named "feed"
+            }
+
+            // Console.log the data found
+            console.log("Data Found: " + res.rowCount);
+        }
+    } catch (e) {
+        console.log(e.stack);
+    }
+
     return feed; // Returning the feed object
+
+
 }
 
 // Retrieve the feed in the :index parameter

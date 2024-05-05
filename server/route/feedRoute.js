@@ -10,6 +10,7 @@ var router = express.Router();
 const feedController = require('../controller/feedController'); // Create a route for feedController
 
 // Get for ALL feed posts
+// router.get('/', async function(req, res) { feedController.getAllFeeds; } ); // Now get that getAllFeeds function in feedController
 router.get('/', feedController.getAllFeeds); // Now get that getAllFeeds function in feedController
 
 // Get for a SINGLE feed post
@@ -17,7 +18,6 @@ router.get('/:index', feedController.getFeed);
 
 // TODO
 router.get('/user/:userID/feeds', feedController.getFeedsByUserID); //N
-
 
 // POST method (not like a feed post)
 router.post('/', feedController.saveFeed);

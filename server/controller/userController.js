@@ -1,26 +1,9 @@
 // ------------------------------------------
 // Import the model we created
-const User = require('../model/user');
+const userService = require('../service/userService');
 // We're basically "catching" the export that was
 // "thrown" to us from user.js in the model folder.
 // ------------------------------------------
-
-// ------------------------------------------
-// Create an empty array that will contain the
-// user model instances that are created.
-let users = [];
-
-// Create a few users
-let joel = new User("Joel", "Miller", "1")
-let ellie = new User("Ellie", "Williams", "2")
-let abby = new User("Abby", "Anderson", "3")
-
-// add the user to the array
-users.push(joel); // user 1
-users.push(ellie); // user 2
-users.push(abby); // user 3
-// ------------------------------------------
-
 
 // ------------------------------------------
 // Send entire users array as the body of the
@@ -31,31 +14,25 @@ exports.getAllUsers = (req, res) => {                   // GET ALL
     // format of content to send back.
 
     // Send back a reponse to the Postman
-    res.send(users); // Send back all users
+    res.send(userService.getAllUsers()); // Send back all users
 }
 
 // Retrieve the user in the :index parameter
 // of the request and return as json.
 
-//TODO
 exports.getUser = (req, res) => {                       // GET SINGLE
     res.setHeader('Content-Type', 'application/json');
 
-    // Send back a reponse to the Postman    
-    users.forEach(user => {
-        if (user.userID == req.params.index)
-            res.send(user); // Send back that specific user
-    });
+    // Returning a specific user from an ID
+    res.send(userService.getUser(req.params.userID));
 }
 
 // Save a user
 exports.saveUser = (req, res) => {                      // POST
-    let newUser = new User(req.body.firstName, req.body.lastName);
-    users.push(newUser);
     res.setHeader('Content-Type', 'application/json');
 
-    // Send back a reponse to the Postman
-    res.send(users); // Send back all users
+    // Save a specific user from their ID, firstName, and lastName.
+    res.send(userService.saveUser(req.params.userID, req.body.firstName, req.body.lastName));
 }
 
 // Complete update
@@ -67,12 +44,8 @@ exports.updateUser = (req, res) => {                      // PUT
     const firstName = req.body.firstName;   // things as param and others as body.
     const lastName = req.body.lastName;
 
-    // Update user with new data
-    users[userID] = new User(firstName, lastName);
-    //    ^ Get index of user
-
-    // Send back a reponse to the Postman
-    res.send(users[userID]); // Send back that specific user
+    // Update a specific user from their ID, firstName, and lastName.
+    res.send(userService.updateUser(userID, firstName, lastName));
 
 }
 
@@ -85,17 +58,11 @@ exports.patchUser = (req, res) => {                      // PATCH
     const firstName = req.body.firstName;
     const lastName = req.body.lastName;
 
-    // Update user with new data
-    if (firstName) {                            // If there is anything in the first name,
-        users[userID].firstName = firstName;    // then it will execute the update.
-    }
+    // No if statements needed here because all the
+    // parsing is done in the userService.js file.
 
-    if (lastName) {                             // If there is anything in the last name,
-        users[userID].lastName = lastName;      // then it will execute the update.
-    }
-
-    // Send back a reponse to the Postman
-    res.send(users); // Send the whole list of users
+    // Send back the user with a partial update
+    res.send(userService.patchUser(userID, firstName, lastName));
 
 }
 
@@ -106,11 +73,8 @@ exports.deleteUser = (req, res) => {                      // DELETE
     // of a User class.
     const userID = req.params.index;
 
-    // Delete the user with the specific ID
-    users.splice(userID, 1);
-
-    // Send back a response to the Postman
-    res.send(users); // Send the whole list of users
+    // Send back the user with that specific ID
+    res.send(userService.deleteUser(userID));
 
 }
 // ------------------------------------------
