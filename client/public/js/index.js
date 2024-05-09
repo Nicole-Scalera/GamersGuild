@@ -13,35 +13,35 @@ const init = () => {
     // to get all the users and display them
     console.log("In Index.js");
 
-        // Get all feeds
-        fetch(base_url + "/api/backendfeed")
-            .then(response => response.json())
-            
-            .then(feeds => {
+    // Get all feeds
+    fetch(base_url + "/api/backendfeed")
+        .then(response => response.json())
 
-                // For each feed listed, create a new row
-                // for caption and comments.
-                feeds.forEach(feed => {
+        .then(feeds => {
 
-                    const post_table = document.createElement('table')
+            // For each feed listed, create a new row
+            // for caption and comments.
+            feeds.forEach(feed => {
 
-                    post_table.innerHTML = '<td>' + feed.description + '</td><td>' + feed.comment + '</td>'
+                const post_table = document.createElement('table')
+
+                //post_table.innerHTML = '<td>' + feed.description + '</td><td>' + feed.comment + '</td>'
 
 
-                    const table_row = document.createElement('tr')
-                    console.log("Feed description: " + feed.description + " Feed comment:" + feed.comment);
+                const table_row = document.createElement('tr')
+                console.log("Feed description: " + feed.description + " Feed comment:" + feed.comment);
 
-                    table_row.innerHTML = '<td>' + feed.description + '</td><td>' + feed.comment + '</td>'
+                table_row.innerHTML = '<td>' + feed.firstName + " " + feed.lastName + '</td><td>' + feed.description + '</td><td>' + feed.comment + '</td>'
 
-                    all_feeds.appendChild(post_table)
-                    all_feeds.appendChild(table_row)
+                //all_feeds.appendChild(post_table)
+                all_feeds.appendChild(table_row)
 
-                }); // Close this with a semi colon
-            })
+            }); // Close this with a semi colon
+        })
 
-            // Exception handling for call to the Feeds API
-            .catch(error => console.error('Error in fetching user Feeds: ', error));
-    }
+        // Exception handling for call to the Feeds API
+        .catch(error => console.error('Error in fetching user Feeds: ', error));
+}
 // -------- ON STARTUP (END) --------
 
 init()

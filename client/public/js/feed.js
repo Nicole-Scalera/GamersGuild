@@ -1,7 +1,5 @@
-//TODO
 const user_feeds = document.getElementById("user_feeds")
 const user_name_section = document.getElementById("Logged_in_user")
-
 const base_url = "http://localhost:1337"
 
 // --------- CREATE NEW POST (START) ---------
@@ -49,7 +47,7 @@ const init = () => {
             })
             .catch(error => console.error('Error in fetching user name: ', error));
 
-//=======================================================================================
+        //=======================================================================================
 
 
         fetch(base_url + "/api/backendfeed/user/" + userID + "/feeds")
@@ -71,6 +69,8 @@ const init = () => {
 
             // Exception handling for call to the Feeds API
             .catch(error => console.error('Error in fetching user Feeds: ', error));
+    } else {
+        window.location.href = base_url + "/login"
     }
 
 }

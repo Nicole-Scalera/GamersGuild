@@ -4,8 +4,10 @@
 //TODO Added feedID
 // Class for a feed post
 class Feed {
-    constructor(feedID, userID, description, like, comment) {
-        this.feedID = feedID
+    constructor(feedID, userID, firstName, lastName, description, like, comment) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.feedID = feedID;
         this.userID = userID;           // Who posted it?
         this.description = description; // What's the description?
         this.like = like;               // Is it liked, or not?

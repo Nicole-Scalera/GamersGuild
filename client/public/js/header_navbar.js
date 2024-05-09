@@ -4,7 +4,6 @@ const navbar = document.getElementById("navigationalbar")           // Navigatio
 const navbar_home = document.getElementById("navbar_home")          // Navigational Bar - Home
 const navbar_create = document.getElementById("navbar_create")      // Navigational Bar - Create
 const navbar_profile = document.getElementById("navbar_profile")    // Navigational Bar - Profile
-
 // -----------------------------------
 
 
@@ -49,9 +48,6 @@ const navbar_items = () => {
         // Link to explore page
         location.href = `/feed`
     }
-
-
-    header_logo.appendChild(header_logo_link) // node we're attaching is header_logo_link
 
 }
 // ------- HEADER ITEMS (END) --------

@@ -33,7 +33,7 @@ exports.getFeedsByUserID = async (req, res) => {
 // Save a feed post
 exports.saveFeed = async (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    res.send(await feedService.saveFeed(req.body.userID, req.body.caption));
+    res.send(await feedService.saveFeed(req.body.userID, req.body.description));
 }
 
 // Complete update of feed post

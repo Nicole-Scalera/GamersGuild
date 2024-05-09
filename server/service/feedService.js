@@ -40,7 +40,7 @@ feed.push(feed6); // Feed post 6
 exports.getAllFeeds = async () => {
     let feed = [];
 
-    let text = "SELECT * FROM feed";
+    let text = "SELECT * FROM gamersguild.feed INNER JOIN gamersguild.users on feed.user_id = users.user_id";
 
     try {
 
@@ -58,7 +58,8 @@ exports.getAllFeeds = async () => {
             for (let i = 0; i < res.rows.length; i++) {
 
                 // Loop through any number of rows in the database (see pgAdmin4 application).
-                let feedX = new Feed(res.rows[i].feed_id, res.rows[i].user_id, res.rows[i].feed_description, res.rows[i].feed_like, res.rows[i].comment) // MAKE SURE VARIABLES ARE SINGULAR
+
+                let feedX = new Feed(res.rows[i].feed_id, res.rows[i].user_id, res.rows[i].first_name, res.rows[i].last_name, res.rows[i].feed_description, res.rows[i].feed_like, res.rows[i].comment) // MAKE SURE VARIABLES ARE SINGULAR
                 feed.push(feedX);
                 // ^^^ Named it feedX because the computer confuses the
                 // feed variable with the actual array named "feed"
@@ -79,7 +80,7 @@ exports.getAllFeeds = async () => {
 exports.getFeed = async (feedID) => {
     let feed = [];
     // For each post in the feed posts
-    let text = "SELECT * FROM feed where feed_ID=$1";
+    let text = "SELECT * FROM gamersguild.feed INNER JOIN gamersguild.users on feed.user_id = users.user_id where feed_ID=$1";
     let values = [feedID]
 
     try {
@@ -98,7 +99,7 @@ exports.getFeed = async (feedID) => {
             for (let i = 0; i < res.rows.length; i++) {
 
                 // Loop through any number of rows in the database (see pgAdmin4 application).
-                let feedX = new Feed(res.rows[i].feed_id, res.rows[i].user_id, res.rows[i].feed_description, res.rows[i].feed_like, res.rows[i].comment) // MAKE SURE VARIABLES ARE SINGULAR
+                let feedX = new Feed(res.rows[i].feed_id, res.rows[i].user_id, res.rows[i].first_name, res.rows[i].last_name, res.rows[i].feed_description, res.rows[i].feed_like, res.rows[i].comment) // MAKE SURE VARIABLES ARE SINGULAR
                 feed.push(feedX);
                 // ^^^ Named it feedX because the computer confuses the
                 // feed variable with the actual array named "feed"
@@ -143,7 +144,7 @@ exports.getFeedsByUserID = async (userID) => {
             for (let i = 0; i < res.rows.length; i++) {
 
                 // Loop through any number of rows in the database (see pgAdmin4 application).
-                let feedX = new Feed(res.rows[i].feed_id, res.rows[i].user_id, res.rows[i].feed_description, res.rows[i].feed_like, res.rows[i].comment) // MAKE SURE VARIABLES ARE SINGULAR
+                let feedX = new Feed(res.rows[i].feed_id, res.rows[i].user_id, res.rows[i].firstName, res.rows[i].lastName, res.rows[i].feed_description, res.rows[i].feed_like, res.rows[i].comment) // MAKE SURE VARIABLES ARE SINGULAR
                 feed.push(feedX);
                 // ^^^ Named it feedX because the computer confuses the
                 // feed variable with the actual array named "feed"
@@ -166,12 +167,12 @@ exports.getFeedsByUserID = async (userID) => {
 
 // TODO - Update this for feedService
 // Save a feed post
-exports.saveFeed = async (userID, caption) => {
+exports.saveFeed = async (userID, description) => {
 
-    const text = `INSERT INTO gamersguild.feed (user_ID, feed_description) 
-    VALUES ($1,$2)
+    const text = `INSERT INTO gamersguild.feed (user_ID, feed_description, feed_like, comment) 
+    VALUES ($1,$2,$3,$4)
     RETURNING feed_id`;
-    const values = [userID, caption];
+    const values = [userID, description, "", ""];
 
     try {
         const res = await db.query(text, values);

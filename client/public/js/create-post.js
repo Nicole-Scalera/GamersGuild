@@ -1,7 +1,19 @@
-const base_url = "http://localhost:1337"                                // Get URL
+const base_url = "http://localhost:1337"                             // Get URL
 const post_caption = document.getElementById("post_caption_id")      // Caption for post
-const share_button = document.getElementById("share_button_id")     // Share button
+const share_button = document.getElementById("share_button_id")      // Share button
 
+const init = () => {
+    var value = ";" + document.cookie;
+    var parts = value.split(";userID=");
+
+    // Identify the userID
+    var userID;
+
+    if (parts.length != 2) {
+        window.location.href = base_url + "/login"
+    }
+
+}
 
 const submit_post = () => {
     // Get the contents of the caption
@@ -14,13 +26,13 @@ const submit_post = () => {
 
 
     if (parts.length == 2) {
-        
+
         userID = parts.pop().split(";").shift();
 
         // Define the data we want to send
         const data = {
             userID: userID, // Get the userID
-            caption: caption_contents // Get the contents of the caption
+            description: caption_contents // Get the contents of the caption
         };
 
         // Send the POST request using fetch
@@ -38,7 +50,10 @@ const submit_post = () => {
         // Link to user's feed page
         window.location.href = base_url + "/feed"
 
+    } else {
+        window.location.href = base_url + "/login"
     }
 
 }
 
+init()
