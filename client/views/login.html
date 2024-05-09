@@ -1,3 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Links should be in Alphabetical Order -->
+    <link rel="stylesheet" href="/css/boxes.css"></link>    <!-- Boxes -->
+    <link rel="stylesheet" href="/css/buttons.css"></link>  <!-- Buttons -->
+    <link rel="stylesheet" href="/css/colors.css"></link>   <!-- Colors -->
+    <link rel="stylesheet" href="/css/fonts.css"></link>    <!-- Fonts -->
+    <link rel="stylesheet" href="/css/globals.css"></link>  <!-- Globals -->
+    <link rel="stylesheet" href="/css/images.css"></link>   <!-- Images -->
+    <link rel="stylesheet" href="/css/navbar.css"></link>   <!-- Nav Bar -->
+    <link rel="stylesheet" href="/css/tables.css"></link>   <!-- Tables -->
+    <link rel="stylesheet" href="/css/text.css"></link>     <!-- Text -->
+
+        <!-- Page Title -->
+        <title>Login</title>
+    
+    </head>
+    
+    <body>
+
+        <!-- ======== HEADER (START) ======== -->
+        <div class="headerbox">
+            <input type="image" src="/img/logo/Logo_White_BlackOutline.svg" alt="Gamers Guild Logo" class="headerlogo" id="gg_header_logo"></input>
+            
+            <!-- ======== NAVIGATIONAL BAR (START) ======== -->
+
+            <nav id="topNav">
+                <ul>
+                    <li><a id="navbar_home">Home</a></li>
+                    <li><a id="navbar_create">Create</a></li>
+                    <li><a id="navbar_profile">Profile</a></li>
+                </ul>
+            </nav>
+
+
+            <!-- ======== NAVIGATIONAL BAR (END) ======== -->
+        </div>
+        <!-- ======== HEADER (END) ======== -->
+
+
+        
+        <!-- ======== LOGIN FORM (START) ======== -->
+        <div class="box1" style="margin: auto; background-color: var(--moonstonebluelighter1);"> <!-- create the background box -->
+        <!-- Display available users to login as -->
+            <table id="all_users_table" class="table1">
+                    <!-- Prompt for user's login and selectable
+                        users will be dynamically generated here. -->
+            </table>            
+        </div> <!-- close the background box -->
+
+        <!-- ======== LOGIN FORM (END) ======== -->
+
+        <!-- ======== JAVASCRIPT (START) ======== -->
+        <script src="/js/header_navbar.js"></script>    <!-- Access the JS file "header_navbar.js" -->
+        <script src="/js/login.js"></script>            <!-- Access the JS file "login.js" -->
+        <!-- ======== JAVASCRIPT (END) ======== -->
+
+    </body>
+</html>
+
 <!-- NOTES -->
 <!-- 
     - <span> tag is for formatting separate pieices in paragraph text.
@@ -7,90 +71,3 @@
     - Order of <div>'s doesn't really matter because JavaScript uses
     IDs to access them.
  -->
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Links should be in Alphabetical Order -->
-    <link rel="stylesheet" href="/css/boxes.css"></link>    <!-- Boxes -->
-    <link rel="stylesheet" href="/css/buttons.css"></link>  <!-- Buttons -->
-    <link rel="stylesheet" href="/css/colors.css"></link>   <!-- Colors -->
-    <link rel="stylesheet" href="/css/fonts.css"></link>    <!-- Fonts -->
-    <link rel="stylesheet" href="/css/globals.css"></link>  <!-- Globals -->
-    <link rel="stylesheet" href="/css/images.css"></link>   <!-- Images -->
-    <link rel="stylesheet" href="/css/text.css"></link>     <!-- Text -->
-
-    <!-- Page Title -->
-    <title>Login</title>
-    
-</head>
-    <body>
-
-        <!-- ======== HEADER (START) ======== -->
-        <div class="headerbox">
-            <input type="image" src="/img/logo/Logo_White_BlackOutline.svg" alt="Gamers Guild Logo" class="headerlogo" id="gg_header_logo"></input>
-            
-            <!-- ======== NAVIGATIONAL BAR (START) ======== -->
-            <div class="navbarbox" id="navigationalbar">
-                <tr style="margin: auto;">
-                    <button><td style="margin: auto;">Home</td></button>
-                    <button><td style="margin: auto;">Explore</td></button>
-                    <button><td style="margin: auto;">Create</td></button>
-                    <button><td style="margin: auto;">Profile</td></button>
-                </tr>
-            </div>
-            <!-- ======== NAVIGATIONAL BAR (END) ======== -->
-        </div>
-        <!-- ======== HEADER (END) ======== -->
-
-
-        <!-- ======== CREDENTIALS PROMPT (START) ======== -->   
-            <!-- Prompt user for Credentials -->
-            <div id="credentials_prompt"></div>
-        <!-- ======== CREDENTIALS PROMPT (END) ======== -->
-
-
-
-        <!-- ================================================================================================================================== -->
-        <!-- ======== LOGIN FORM (START) ======== -->
-        <div class="box1" style="margin: auto; background-color: var(--moonstonebluelighter1);"> <!-- create the background box -->
-            
-        <!-- ======== WELCOME BACK MESSAGE (START) ======== -->
-        <!-- Once user has logged in,
-            display Welcome Back message. -->
-        <div id="welcome_back_message" style="vertical-align: middle;">
-        
-            <div id="welcome_back_text" style="font-family: 'stevie-sans', monospace; font-size: 16pt; font-weight: 200pt; color: var(--darkcyan); text-align: center;"></div>
-        
-            <!-- Display available users to login as -->
-            <div id="all_users">
-                <table id="all_users_table">
-                    <tr>
-                        <td>Username</td>
-                        <td>User ID</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        <!-- ======== WELCOME BACK MESSAGE (END) ======== -->
-
-            
-        </div> <!-- close the background box -->
-
-        <!-- ======== LOGIN FORM (END) ======== -->
-        <!-- ================================== -->
-
-
-
-        <!-- ======== JAVASCRIPT (START) ======== -->
-        <script src="/js/header_navbar.js"></script>    <!-- Access the JS file "header_navbar.js" -->
-        <script src="/js/login.js"></script>            <!-- Access the JS file "login.js" -->
-        <!-- ======== JAVASCRIPT (END) ======== -->
-
-    </body>
-</html>

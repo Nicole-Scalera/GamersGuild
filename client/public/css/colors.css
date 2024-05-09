@@ -6,16 +6,27 @@
     /* Moonstone Blue */
     --moonstoneblue: #73a9c2;
     --moonstonebluelighter1: #aacddd;
-    --darkcyan: #32505e;
-    --darkcyanlighter: #508096;
+    --moonstonebluedarker1: #6798ae;
+    --moonstonebluedarker2: #507688;
+    --cyanlevel1: #32505e;
+    --cyanlevel2: #40606E;
+    --cyanlevel3: #4F6F7E;
+    --cyanlevel4: #60808F;
     --pickledbluewood: #314459;
 
     /* Cadet Grey */
     --cadetgrey: #91a3b0;
     --cadetgreylighter: #aebbc4;
     --cadetgreytint1: #87A5BA;
+
+    /* Misc */
     --casper: #adbed1;
     --ghost: #c7c9d5;
     --silversand: #bfc1c2;
     --slateblue: #526470;
+    
+    /* Whites and Greys */
+    --languid: #cccccc;
+    --seashell: #f0f0f0;
+
 }

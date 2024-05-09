@@ -2,7 +2,7 @@ const { Pool, Client } = require('pg');
 
 const pool = new Pool({
     host: "localhost",
-    port: "5432T",
+    port: "5432",
     user: "gamersguild",
     //password: process.env.PG_PASSWORD,
     password: "gamersguild",

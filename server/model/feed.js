@@ -1,9 +1,11 @@
 // This will define the shape of a post/feed
 // that gets stored in the database.
 
+//TODO Added feedID
 // Class for a feed post
 class Feed {
-    constructor(userID, description, like, comment) {
+    constructor(feedID, userID, description, like, comment) {
+        this.feedID = feedID
         this.userID = userID;           // Who posted it?
         this.description = description; // What's the description?
         this.like = like;               // Is it liked, or not?

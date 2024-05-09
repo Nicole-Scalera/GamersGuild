@@ -23,11 +23,11 @@ const gt_feed_button = document.getElementById("gtf_button")            // "Go t
 function open_feed_posts(userID) {
     console.log("user clicked with user ID " + userID)
     var now = new Date();
-    var expire_time = 60000;
+    var expire_time = 600000; // Expiration time of 10 minutes
     now.setTime(now.getTime() + expire_time);
     document.cookie = "userID=" + userID + "; expires="
         + now.toUTCString() + ";";
-    window.location = "/feed"
+    window.location = "/feed" // Redirect to feed page
 }
 // -----------------------------------
 
@@ -39,20 +39,31 @@ const init = () => {
     fetch(base_url + "/api/user")  // Get all users
         .then(response => response.json())
 
-        // For each user listed...
         .then(users => {
-            users.forEach(user => {
 
-                // ... create a table row
-                const table_row = document.createElement('tr')
+            // Create a row prompting user for login
+            const table_row_prompt = document.createElement('tr')
+
+            // Content of row
+            //table_row_prompt.textContent = 'Login'
+
+            // Formatting of row
+            table_row_prompt.innerHTML = '<td class="text1">Login</td>'
+
+            // Add to all_users_table
+            all_users_table.appendChild(table_row_prompt)
+
+            // For each user listed, create a table row.
+            users.forEach(user => {
+                const table_row_users = document.createElement('tr')
 
                 // Display first name, last name, and user ID of user
-                table_row.textContent = user.firstName + ' ' + user.lastName + ' ' + user.userID
+                table_row_users.textContent = user.firstName + ' ' + user.lastName + ' ' + user.userID
 
-                table_row.innerHTML = '<td><button onclick = open_feed_posts(' + user.userID + ') class="button_nav1">' + user.firstName + ' ' + user.lastName + '</button></td><td>' + user.userID + '</td>'
+                table_row_users.innerHTML = '<td><button onclick = open_feed_posts(' + user.userID + ') class="button_nav1">' + user.firstName + ' ' + user.lastName + '</button></td>'
 
-                // Add table row with user to the user table
-                all_users_table.appendChild(table_row)
+                // Add to all_users_table
+                all_users_table.appendChild(table_row_users)
 
                 console.log(user.firstName); // For debugging
 
@@ -61,9 +72,7 @@ const init = () => {
         
         // Exception handling for call to the users API
         .catch(error => console.error('Error in fetching users: ', error));
-
-    // Prompt User for Credentials
-
+7
 }
 // -------- ON STARTUP (END) --------
 

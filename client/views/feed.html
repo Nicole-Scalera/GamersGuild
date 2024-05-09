@@ -6,20 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Links should be in Alphabetical Order -->
-    <link rel="stylesheet" href="/css/boxes.css">
-    </link> <!-- Boxes -->
-    <link rel="stylesheet" href="/css/buttons.css">
-    </link> <!-- Buttons -->
-    <link rel="stylesheet" href="/css/colors.css">
-    </link> <!-- Colors -->
-    <link rel="stylesheet" href="/css/fonts.css">
-    </link> <!-- Fonts -->
-    <link rel="stylesheet" href="/css/globals.css">
-    </link> <!-- Globals -->
-    <link rel="stylesheet" href="/css/images.css">
-    </link> <!-- Images -->
-    <link rel="stylesheet" href="/css/text.css">
-    </link> <!-- Text -->
+    <link rel="stylesheet" href="/css/boxes.css"></link> <!-- Boxes -->
+    <link rel="stylesheet" href="/css/buttons.css"></link> <!-- Buttons -->
+    <link rel="stylesheet" href="/css/colors.css"></link> <!-- Colors -->
+    <link rel="stylesheet" href="/css/fonts.css"></link> <!-- Fonts -->
+    <link rel="stylesheet" href="/css/globals.css"></link> <!-- Globals -->
+    <link rel="stylesheet" href="/css/images.css"></link> <!-- Images -->
+    <link rel="stylesheet" href="/css/tables.css"></link> <!-- Tables -->
+    <link rel="stylesheet" href="/css/text.css"></link> <!-- Text -->
 
     <!-- Page Title -->
     <title>Feed</title>
@@ -39,14 +33,7 @@
     </div>
     <!-- ======== HEADER (END) ======== -->
 
-    <!-- ======== NEW POST (START) ======== -->
-    <div id="login_prompt">
-        <button onclick="create_new_post()" class="button_nav1" style="font-family: stevie-sans, monospace; font-size: 12pt; font-weight: 200pt;">Create New Post</button>
-    </div>
-    <!-- ======== NEW POST (END) ======== -->
-
-
-    <!-- ======== TODO ======== -->
+    <!-- ======== WELCOME USER / DISPLAY FEEDS (START) ======== -->
     <div id="Logged_in_user"> </div>
 
     <div id="posts-container" class="post1">
@@ -55,8 +42,15 @@
             <th>Feed Comment</th>
         </table>
     </div>
+    <!-- ======== WELCOME USER / DISPLAY FEEDS (END) ======== -->
 
+    <!-- ======== NEW POST (START) ======== -->
+    <button onclick="create_new_post()" class="button_nav1" style="margin: 0%;">Create New Post</button>
+    <!-- ======== NEW POST (END) ======== -->
 
+    <!-- ======== VIEW ALL POSTS (START) ======== -->
+    <button onclick="go_to_home()" class="button_nav1" style="margin: 0%;">Go to Home</button>
+    <!-- ======== VIEW ALL POSTS (END) ======== -->
 
 
     <!-- ======== JAVASCRIPT (START) ======== -->

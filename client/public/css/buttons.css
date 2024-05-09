@@ -4,12 +4,12 @@
  * hot bar header that is on every page. */
 .button_nav1 {
     /* Box Information */
-    background-color: var(--darkcyan);
+    background-color: var(--cyanlevel2);
     border: none;
     border-radius: 1.10em 1.10em 1.10em 1.10em;
     color: white;
     padding: 0.5em 1em; /* Height, Width */
-    margin-top: 5%;
+    margin-top: 4%;
     display: inline-block;
 
     /* Text Information */
@@ -22,6 +22,6 @@
 
 /* ----- NAVIGATIONAL BUTTON 1 - HOVER -----*/
 .button_nav1:hover {
-    background-color: var(--darkcyanlighter);
+    background-color: var(--cyanlevel3);
     color: white;
 }

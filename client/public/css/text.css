@@ -1,1 +1,7 @@
-
+.text1 {
+    font-family: stevie-sans, monospace;
+    font-size: 15pt;
+    font-weight: 500pt;
+    color: var(--cyanlevel2);
+    text-align: center;
+}

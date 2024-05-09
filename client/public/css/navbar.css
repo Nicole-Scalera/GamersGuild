@@ -1,0 +1,43 @@
+/* Sampled from  */
+
+/* Global Styling */
+body, header, nav {
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    text-align: center;
+    /* height: 150px; */
+    padding-top: 50px;
+}
+
+/* Navbar Styling */
+nav {
+    background: var(--moonstonebluedarker1);
+    position: relative;
+    width: 100%;
+    height: 50px;
+    padding: 5px 0;
+    font-family: stevie-sans, monospace;
+    font-weight: 500pt;
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fcfff5;
+    padding: 22px;
+}
+
+/* Change background color when hovered to
+standard banner color, moonstone blue. */
+nav a:hover {
+    background: var(--moonstoneblue);
+    cursor: pointer;
+}

@@ -33,6 +33,9 @@ app.use(express.static('./client/public')); // Middleware
 // Route Handler for Homepage ---------------------
 app.get(['/', '/index.html'], function (req, res) {
 //        ^ The '/' goes to the homepage of the app.
+//          It assumes that if they don't put anything
+//          after the slash following the base URL,
+//          they will be defaulted to index.html.
     res.sendFile('index.html', { root: './client/views' })
 })                               // Serving up the public folder
                                  // by the dot here.

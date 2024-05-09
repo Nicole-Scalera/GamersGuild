@@ -3,7 +3,7 @@ const all_feeds = document.getElementById("all_feeds")
 const base_url = "http://localhost:1337"
 
 const my_feeds = () => {
-    window.location.href = base_url + "/login"
+    window.location.href = base_url + "/feed"
 }
 
 // -------- ON STARTUP (START) --------
@@ -16,16 +16,24 @@ const init = () => {
         // Get all feeds
         fetch(base_url + "/api/backendfeed")
             .then(response => response.json())
-
-            // For each user listed...
+            
             .then(feeds => {
+
+                // For each feed listed, create a new row
+                // for caption and comments.
                 feeds.forEach(feed => {
-                    // ... create a table row
+
+                    const post_table = document.createElement('table')
+
+                    post_table.innerHTML = '<td>' + feed.description + '</td><td>' + feed.comment + '</td>'
+
+
                     const table_row = document.createElement('tr')
-                    console.log("Feed description: " + feed.description);
+                    console.log("Feed description: " + feed.description + " Feed comment:" + feed.comment);
 
                     table_row.innerHTML = '<td>' + feed.description + '</td><td>' + feed.comment + '</td>'
 
+                    all_feeds.appendChild(post_table)
                     all_feeds.appendChild(table_row)
 
                 }); // Close this with a semi colon
